@@ -404,4 +404,16 @@
     </div>
 </section>
 
+<section class="industry" style="background: #f4f4f4 url(images/banner-grid.png) repeat-y 0 0; background-size: cover;">
+    <div class="container">
+        <div class="subheading">
+            <h6>Industry</h6>
+            <div class="sq sq1"></div>
+            <div class="sq sq2"></div>
+            <div class="sq sq3"></div>
+            <div class="sq sq4"></div>
+        </div>
+    </div>
+</section>
+
 <?php include 'inc/footer.php'; ?>

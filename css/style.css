@@ -1,5 +1,9 @@
 @import url(./reset.css);
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+:root {
+  scroll-behavior: unset;
+}
+
 body {
   color: #000;
   font-family: "DM Sans", sans-serif;
@@ -179,7 +183,7 @@ body {
 }
 
 header {
-  position: sticky;
+  position: fixed;
   top: 16px;
   left: 0;
   right: 0;
@@ -1142,6 +1146,7 @@ header .header-row .nav .menu li.has-submenu:hover .submenu {
   font-weight: 500;
   line-height: 32px; /* 177.778% */
   position: relative;
+  transition: all 0.3s ease-out;
 }
 .our-services .serv-left ul li.active {
   color: #fff;
@@ -1153,16 +1158,13 @@ header .header-row .nav .menu li.has-submenu:hover .submenu {
 }
 .our-services .serv-scroll-slide {
   position: relative;
-  height: 450px;
+  height: 424px;
   overflow: hidden;
 }
 .our-services .serv-scroll-slide .slide-inner {
   position: absolute;
   inset: 0;
-  padding: 50px;
-  background: #141414;
-  border-radius: 16px;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+  background: #000;
   transform: translateY(100%);
   transition: transform 0.6s ease-out;
   will-change: transform;
@@ -1220,4 +1222,41 @@ header .header-row .nav .menu li.has-submenu:hover .submenu {
 }
 .our-services .serv-scroll-slide .slide-inner:nth-child(4) {
   z-index: 4;
+}
+.our-services .serv-scroll-slide .slide-inner .button-container {
+  margin-bottom: 0;
+}
+
+.industry {
+  padding: 104px 0 135px;
+  position: relative;
+  text-align: center;
+  color: rgb(244, 244, 244);
+}
+.industry:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 150px;
+  z-index: 1;
+  background: #fff;
+  background: linear-gradient(180deg, rgb(244, 244, 244) 5%, rgba(255, 153, 2, 0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f4f4f4", endColorstr="#FF9902", GradientType=0);
+}
+.industry:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 150px;
+  background: #fff;
+  z-index: 1;
+  background: linear-gradient(0deg, rgb(244, 244, 244) 0%, rgba(255, 153, 2, 0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f4f4f4", endColorstr="#FF9902", GradientType=0);
+}
+.industry .subheading {
+  margin: 0 auto 24px;
 }/*# sourceMappingURL=style.css.map */

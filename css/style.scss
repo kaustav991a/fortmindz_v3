@@ -7,6 +7,10 @@
 $poppins: "Poppins", sans-serif;
 $dmsans: "DM Sans", sans-serif;
 
+:root {
+    scroll-behavior: unset;
+}
+
 //! Global Colors
 //! ---------------
 $brand-primary: #fc9611;
@@ -220,7 +224,7 @@ body {
 }
 // CSS Starts
 header {
-    position: sticky;
+    position: fixed;
     top: 16px;
     left: 0;
     right: 0;
@@ -1349,6 +1353,7 @@ header {
                 font-weight: 500;
                 line-height: 32px; /* 177.778% */
                 position: relative;
+                transition: all 0.3s ease-out;
                 &.active {
                     color: $white;
                     font-weight: 700;
@@ -1362,15 +1367,15 @@ header {
     }
     .serv-scroll-slide {
         position: relative;
-        height: 450px;
+        height: 424px;
         overflow: hidden;
         .slide-inner {
             position: absolute;
             inset: 0;
-            padding: 50px;
-            background: #141414;
-            border-radius: 16px;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+            // padding: 50px;
+            background: $pitch-black;
+            // border-radius: 16px;
+            // box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
             transform: translateY(100%);
             transition: transform 0.6s ease-out;
             will-change: transform;
@@ -1433,6 +1438,48 @@ header {
             &:nth-child(4) {
                 z-index: 4;
             }
+            .button-container {
+                margin-bottom: 0;
+            }
         }
+    }
+}
+
+.industry {
+    padding: 104px 0 135px;
+    position: relative;
+    text-align: center;
+    color: rgba(244, 244, 244, 1);
+    // background-color: #f4f4f4;
+    &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        height: 150px;
+        z-index: 1;
+        background: $white;
+        background: -webkit-linear-gradient(180deg, rgba(244, 244, 244, 1) 5%, rgba(255, 153, 2, 0) 100%);
+        background: -moz-linear-gradient(180deg, rgba(244, 244, 244, 1) 5%, rgba(255, 153, 2, 0) 100%);
+        background: linear-gradient(180deg, rgba(244, 244, 244, 1) 5%, rgba(255, 153, 2, 0) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f4f4f4", endColorstr="#FF9902", GradientType=0);
+    }
+    &:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        height: 150px;
+        background: $white;
+        z-index: 1;
+        background: -webkit-linear-gradient(0deg, rgba(244, 244, 244, 1) 0%, rgba(255, 153, 2, 0) 100%);
+        background: -moz-linear-gradient(0deg, rgba(244, 244, 244, 1) 0%, rgba(255, 153, 2, 0) 100%);
+        background: linear-gradient(0deg, rgba(244, 244, 244, 1) 0%, rgba(255, 153, 2, 0) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f4f4f4", endColorstr="#FF9902", GradientType=0);
+    }
+    .subheading {
+        margin: 0 auto 24px;
     }
 }

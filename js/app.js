@@ -166,8 +166,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // --------------------------------------------------------------------
 
+  // ! --------------------------------------
   //! Initialization function for the marquee slider
   //! We use the AutoScroll extension to achieve the smooth, continuous motion.
+  // ! --------------------------------------
   new Splide(".logo-slider", {
     type: "loop",
     perPage: 6,
@@ -176,6 +178,40 @@ document.addEventListener("DOMContentLoaded", function () {
     focus: "center",
     gap: "1em",
   }).mount(window.splide.Extensions);
+  // ! --------------------------------------
+  //! Initialization function for the marquee slider
+  // ! --------------------------------------
+
+  // ! --------------------------------------
+  // ! Lenis scroll
+  // ! --------------------------------------
+  // 1️⃣ Init Lenis
+  const lenis = new Lenis({
+    duration: 1.2, // reduce slightly for snappier response
+    easing: (t) => 1 - Math.pow(1 - t, 3),
+    smooth: true,
+    smoothTouch: false,
+  });
+
+  // 2️⃣ Sync ScrollTrigger
+  lenis.on("scroll", ScrollTrigger.update);
+
+  // 3️⃣ Use GSAP ticker to drive Lenis
+  gsap.ticker.add((time) => {
+    lenis.raf(time * 1000);
+  });
+  gsap.ticker.lagSmoothing(0);
+
+  // 4️⃣ Force a refresh after everything loads
+  window.addEventListener("load", () => {
+    setTimeout(() => {
+      ScrollTrigger.refresh();
+      lenis.raf(performance.now());
+    }, 100); // small delay ensures layout ready
+  });
+  // ! --------------------------------------
+  // ! Lenis scroll
+  // ! --------------------------------------
 
   // ! --------------------------------------
   // ! GSAP Pin section
