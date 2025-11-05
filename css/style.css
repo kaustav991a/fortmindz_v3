@@ -1247,8 +1247,6 @@ header .header-row .nav .menu li.has-submenu:hover .submenu {
   color: rgb(244, 244, 244);
   /* Grid container using flexbox for better control */
   /* Row container */
-  /* Box styling */
-  /* Responsive adjustments */
 }
 .industry:before {
   content: "";
@@ -1303,22 +1301,17 @@ header .header-row .nav .menu li.has-submenu:hover .submenu {
   border-radius: 8px;
   position: relative;
   overflow: hidden;
-  flex: 1; /* Equal distribution by default */
-  transition: flex 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  flex: 1;
+  transition: flex 0.8s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.8s cubic-bezier(0.19, 1, 0.22, 1), transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
   cursor: pointer;
   z-index: 1;
-  /* Box content container - split into two parts */
-  /* Left part with icon and title - always visible */
-  /* Hidden paragraph - positioned to the right initially */
-  /* Close button for touch devices */
-  /* Hover state for box - horizontal expansion */
-  /* Active state for touch devices */
-  /* Shrink other boxes in the same row */
-  /* Focus state for accessibility */
+  transform: translateZ(0);
 }
 .industry .box .box-inner {
   display: flex;
   height: 100%;
+  justify-content: center;
+  align-items: center;
   position: relative;
 }
 .industry .box .box-main {
@@ -1328,51 +1321,57 @@ header .header-row .nav .menu li.has-submenu:hover .submenu {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 1.5rem;
-  transition: width 1s cubic-bezier(0.25, 0.8, 0.25, 1);
+  padding: 12px;
+  transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
   z-index: 2;
   position: relative;
-  background-color: #fff;
-  /* Icon styling */
-  /* Box title */
+  background-color: transparent;
 }
 .industry .box .box-main .box-icon {
-  transition: transform 1s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-.industry .box .box-main .box-icon svg {
-  width: 60px;
-  height: 48px;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #3498db;
+  transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1);
 }
 .industry .box .box-main .box-title {
+  margin-top: 5px;
   color: #000;
   text-align: center;
   font-family: "Poppins", sans-serif;
-  font-size: 17px;
+  font-size: 15px;
   font-style: normal;
   font-weight: 600;
   line-height: 28px; /* 164.706% */
-  transition: transform 1s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1);
 }
 .industry .box .box-content {
-  position: absolute;
-  top: 0;
-  left: 100%;
-  width: 50%;
-  height: 100%;
+  width: 0%;
+  transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.industry .box .box-content .box-content-dt {
   padding: 1.5rem;
-  background-color: #fff;
+  background-color: transparent;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  opacity: 0;
-  transition: opacity 1s cubic-bezier(0.25, 0.8, 0.25, 1), left 1s cubic-bezier(0.25, 0.8, 0.25, 1);
-  pointer-events: none;
   z-index: 1;
   text-align: left;
+  width: 15.875rem;
+  overflow-y: auto;
+  transform: translateX(100%);
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
 }
-.industry .box .box-content p {
-  font-size: 0.9rem;
-  color: #555;
+.industry .box .box-content .box-content-dt p {
+  color: #111;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  line-height: 24px;
+  margin: 0;
+  transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.industry .box .fillblack {
+  transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
 }
 .industry .box .close-btn {
   position: absolute;
@@ -1383,116 +1382,62 @@ header .header-row .nav .menu li.has-submenu:hover .submenu {
   font-size: 1.2rem;
   cursor: pointer;
   color: #7f8c8d;
+  transition: opacity 0.6s cubic-bezier(0.19, 1, 0.22, 1);
   opacity: 0;
-  transition: opacity 0.3s ease;
   z-index: 20;
 }
 .industry .box:hover {
-  flex: 2.4; /* Take up double the space */
+  flex: 2.8;
   z-index: 10;
-  /* Show content on hover */
-  /* Adjust main section width on hover */
-  /* Slide icon and title left on hover */
-  /* Show close button on hover */
+  background-color: #fc9611;
+  transition: all 0.9s cubic-bezier(0.19, 1, 0.22, 1);
 }
-.industry .box:hover .box-content {
-  left: 50%;
-  opacity: 1;
-  pointer-events: all;
+.industry .box:hover .fillblack {
+  fill: #111;
 }
 .industry .box:hover .box-main {
-  width: 50%;
-  align-items: center;
-  text-align: center;
-  padding-left: 1.5rem;
-  padding-right: 0.5rem;
+  transform: translateX(0);
+}
+.industry .box:hover .box-content {
+  width: 100%;
+  border-left: 1px solid #e38204;
+}
+.industry .box:hover .box-content .box-content-dt {
+  transform: translateX(0);
+  opacity: 1;
+}
+.industry .box:hover .box-content .box-content-dt p {
+  color: #111;
+}
+.industry .box:hover .box-icon,
+.industry .box:hover .box-title {
+  transform: translateX(0);
 }
 .industry .box:hover .close-btn {
   opacity: 1;
 }
-.industry .box.active {
-  flex: 2; /* Take up double the space */
+.industry .box.active, .industry .box:active {
+  flex: 2.8;
   z-index: 10;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  background-color: #fc9611;
+  transition: all 0.9s cubic-bezier(0.19, 1, 0.22, 1);
 }
-.industry .box.active .box-content {
-  left: 50%;
-  opacity: 1;
-  pointer-events: all;
+.industry .box.active .fillblack, .industry .box:active .fillblack {
+  fill: #111;
 }
-.industry .box.active .box-main {
-  width: 50%;
-  align-items: flex-start;
-  text-align: left;
-  padding-left: 1.5rem;
-  padding-right: 0.5rem;
+.industry .box.active .box-content, .industry .box:active .box-content {
+  width: 100%;
+  border-left: 1px solid #e38204;
 }
-.industry .box.active .box-icon,
-.industry .box.active .box-title {
-  transform: translateX(-10px);
-}
-.industry .box.active .close-btn {
+.industry .box.active .box-content .box-content-dt, .industry .box:active .box-content .box-content-dt {
+  transform: translateX(0);
   opacity: 1;
 }
-.grid-row:hover .industry .box:not(:hover) {
-  flex: 0.5; /* Take up half the space */
-  opacity: 0.8;
+.industry .box.active .box-content .box-content-dt p, .industry .box:active .box-content .box-content-dt p {
+  color: #111;
 }
-.industry .box:focus {
-  outline: 3px solid #3498db;
-  outline-offset: 2px;
-}
-@media (max-width: 992px) {
-  .industry .grid-row {
-    flex-wrap: wrap;
-  }
-  .industry .box {
-    flex-basis: calc(50% - 0.75rem);
-  }
-  .industry .box:hover {
-    flex-basis: calc(100% - 0.75rem);
-  }
-  .industry .box:hover .box-content {
-    left: 50%;
-  }
-  .industry .grid-row:hover .box:not(:hover) {
-    flex-basis: calc(25% - 0.75rem);
-  }
-}
-@media (max-width: 576px) {
-  .industry .box {
-    flex-basis: 100%;
-  }
-  .industry .box:hover {
-    flex-basis: 100%;
-  }
-  .industry .box:hover .box-main {
-    width: 100%;
-    align-items: center;
-    text-align: center;
-    padding: 1.5rem;
-  }
-  .industry .box:hover .box-content {
-    position: relative;
-    left: 0;
-    width: 100%;
-    margin-top: 1rem;
-  }
-  .industry .box.active .box-main {
-    width: 100%;
-    align-items: center;
-    text-align: center;
-    padding: 1.5rem;
-  }
-  .industry .box.active .box-content {
-    position: relative;
-    left: 0;
-    width: 100%;
-    margin-top: 1rem;
-  }
-  .industry .grid-row:hover .box:not(:hover) {
-    flex-basis: 100%;
-  }
+.industry .box.active .close-btn, .industry .box:active .close-btn {
+  opacity: 1;
 }
 
 .case-studies {
