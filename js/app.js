@@ -7,92 +7,143 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   //! --- 1. Custom Menu ---
-  const toggle = document.querySelector(".menu-toggle");
-  const menu = document.querySelector(".menu");
 
-  if (toggle && menu) {
-    const submenuParents = Array.from(
-      menu.querySelectorAll(".has-submenu > a")
-    );
+  // --- Desktop Submenu Animation (≥768px) ---
+  const setupDesktopMenu = () => {
+    // --- Mega Menu Animation (Desktop) ---
+    document.querySelectorAll(".has-megamenu").forEach((menu) => {
+      const mega = menu.querySelector(".megamenu");
+      if (!mega) return;
 
-    // Menu State Functions
-    const openMenu = () => {
-      toggle.classList.add("active");
-      menu.classList.add("open");
-      toggle.setAttribute("aria-expanded", "true");
-      document.body.classList.add("menu-open"); // optional: lock scroll
-    };
-    const closeMenu = () => {
-      toggle.classList.remove("active");
-      menu.classList.remove("open");
-      toggle.setAttribute("aria-expanded", "false");
-      document.body.classList.remove("menu-open");
-      // close all opened submenus on mobile
-      menu
-        .querySelectorAll(".has-submenu.open")
-        .forEach((el) => el.classList.remove("open"));
-    };
-    const toggleMenu = () =>
-      menu.classList.contains("open") ? closeMenu() : openMenu();
+      // initial hidden state
+      gsap.set(mega, { display: "none", opacity: 0, y: -15 });
 
-    // Event Listeners
-    toggle.addEventListener("click", (e) => {
-      e.stopPropagation();
-      toggleMenu();
+      const tl = gsap.timeline({ paused: true });
+
+      tl.to(mega, {
+        display: "flex",
+        opacity: 1,
+        y: 0,
+        duration: 0.25, // faster reveal
+        ease: "power2.out",
+      })
+        .from(
+          mega.querySelectorAll(".mega-column, .mega-left, .mega-group"),
+          {
+            opacity: 0,
+            y: 15,
+            stagger: 0.05, // faster column entry
+            duration: 0.25,
+            ease: "power2.out",
+          },
+          "-=0.15"
+        )
+        .from(
+          mega.querySelectorAll("ul li"),
+          {
+            opacity: 0,
+            y: 8,
+            stagger: 0.02, // quick list reveal
+            duration: 0.2,
+            ease: "power2.out",
+          },
+          "-=0.15"
+        )
+        .from(
+          mega.querySelector(".mega-footer"),
+          {
+            opacity: 0,
+            y: 10,
+            duration: 0.25,
+            ease: "power2.out",
+          },
+          "-=0.15"
+        );
+
+      menu.addEventListener("mouseenter", () => tl.play());
+      menu.addEventListener("mouseleave", () => tl.reverse());
     });
 
-    // Click-outside to close
-    document.addEventListener("click", (e) => {
-      if (!menu.classList.contains("open")) return;
-      if (!e.target.closest(".menu") && !e.target.closest(".menu-toggle")) {
-        closeMenu();
-      }
-    });
+    document.querySelectorAll(".has-submenu .menu-head").forEach((head) => {
+      head.addEventListener("click", () => {
+        const parent = head.parentElement;
+        const icon = head.querySelector(".icon");
 
-    // Escape to close
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && menu.classList.contains("open")) {
-        closeMenu();
-        toggle.focus();
-      }
-    });
-
-    // Submenu behaviour
-    submenuParents.forEach((link) => {
-      const parentLi = link.parentElement;
-      link.setAttribute("aria-haspopup", "true");
-      link.setAttribute(
-        "aria-expanded",
-        parentLi.classList.contains("open") ? "true" : "false"
-      );
-
-      link.addEventListener("click", (e) => {
-        // mobile behaviour: toggle accordion (<= 767px)
-        if (window.innerWidth <= 767) {
-          e.preventDefault();
-          parentLi.classList.toggle("open");
-          const isOpen = parentLi.classList.contains("open");
-          link.setAttribute("aria-expanded", isOpen ? "true" : "false");
-        }
+        parent.classList.toggle("active");
+        icon.textContent = parent.classList.contains("active") ? "-" : "+";
       });
     });
+  };
 
-    // Resize handler (cleanup mobile state on desktop switch)
-    let resizeTimer;
-    window.addEventListener("resize", () => {
-      clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(() => {
-        if (window.innerWidth > 767) {
-          closeMenu();
-          menu
-            .querySelectorAll(".has-submenu")
-            .forEach((li) => li.classList.remove("open"));
-        }
-      }, 120);
+  // --- Mobile Menu Animation (≤767px) ---
+  const setupMobileMenu = () => {
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const nav = document.querySelector(".nav");
+    const menuLinks = document.querySelectorAll(".menu li");
+
+    const mobileTl = gsap.timeline({ paused: true, reversed: true });
+
+    mobileTl
+      // hamburger → cross
+      .to(
+        ".menu-toggle span:nth-child(1)",
+        { y: 7, rotate: 45, duration: 0.3, ease: "power2.inOut" },
+        0
+      )
+      .to(".menu-toggle span:nth-child(2)", { opacity: 0, duration: 0.2 }, 0)
+      .to(
+        ".menu-toggle span:nth-child(3)",
+        { y: -7, rotate: -45, duration: 0.3, ease: "power2.inOut" },
+        0
+      )
+      // slide nav in
+      .to(nav, { right: 0, duration: 0.6, ease: "power3.out" }, "-=0.2")
+      // animate menu items
+      .from(
+        menuLinks,
+        {
+          opacity: 0,
+          x: 40,
+          stagger: 0.07,
+          duration: 0.4,
+          ease: "power2.out",
+        },
+        "-=0.3"
+      );
+
+    toggleBtn.addEventListener("click", () => {
+      const isMobile = window.innerWidth <= 767;
+      if (!isMobile) return; // prevent triggering on larger screens
+
+      if (mobileTl.reversed()) {
+        mobileTl.play();
+        nav.classList.add("active");
+      } else {
+        mobileTl.reverse();
+        nav.classList.remove("active");
+      }
     });
-  } else {
-    console.warn("Menu toggle or menu not found. Custom menu script skipped.");
-  }
+  };
+
+  // --- Initialize Based on Screen Size ---
+  const initMenu = () => {
+    if (window.innerWidth <= 767) {
+      setupMobileMenu();
+    } else {
+      setupDesktopMenu();
+    }
+  };
+
+  initMenu();
+  window.addEventListener("resize", () => {
+    // reset all inline GSAP styles on resize for safety
+    gsap.killTweensOf("*");
+    document
+      .querySelectorAll(".submenu")
+      .forEach((el) => gsap.set(el, { clearProps: "all" }));
+    document.querySelector(".nav")?.classList.remove("active");
+    initMenu();
+  });
 
   //! --- 2. Banner soft Mask (Mouse following effect) ---
   const banner = document.querySelector(".banner");
@@ -150,6 +201,111 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   //! --- 3. Splide Sliders ---
+
+  /* testimonial-swiper: responsive + continuous autoplay on desktop
+   Behavior:
+   - Mobile (<768): swipeable, no autoplay, normal speed
+   - Tablet (>=768 && <992): small autoplay disabled, nicer speed
+   - Desktop (>=992): continuous marquee-like autoplay (delay:0) with freeMode
+*/
+
+  (function () {
+    // destroy existing instance if re-initializing in dev
+    if (window.testimonialSwiper && window.testimonialSwiper.destroy) {
+      try {
+        window.testimonialSwiper.destroy(true, true);
+      } catch (e) {}
+    }
+
+    window.testimonialSwiper = new Swiper(".testimonial-swiper", {
+      // core
+      direction: "horizontal",
+      loop: true,
+      grabCursor: true,
+      keyboard: { enabled: true },
+      watchOverflow: true,
+
+      // default (mobile-first)
+      slidesPerView: 1.15,
+      spaceBetween: 20,
+      speed: 1200,
+      freeMode: false,
+      autoplay: false,
+
+      // navigation (works if .swiper-button-next / prev exist)
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+
+      // breakpoints (min-width)
+      breakpoints: {
+        // >= 768px
+        767: {
+          slidesPerView: 1.5,
+          spaceBetween: 12,
+          speed: 1500,
+          freeMode: false,
+          autoplay: false,
+        },
+        // >= 992px -> continuous marquee-like behavior
+        991: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+          // continuous autoplay:
+          autoplay: {
+            delay: 0, // start immediately
+            disableOnInteraction: false,
+            pauseOnMouseEnter: false,
+          },
+          freeMode: true, // enable freeMode for smooth momentum
+          freeModeMomentum: true,
+          freeModeMomentumRatio: 0.9,
+          freeModeMomentumVelocityRatio: 0.8,
+          speed: 6000, // slide transition speed (tune for smoothness)
+          // increase loopedSlides to avoid gaps (should be >= slidesPerView)
+          loopedSlides: 6,
+        },
+        // >=1200px — slightly slower/longer travel for larger screens
+        1191: {
+          slidesPerView: 3,
+          spaceBetween: 30,
+          autoplay: {
+            delay: 0,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: false,
+          },
+          freeMode: true,
+          freeModeMomentum: true,
+          speed: 10000,
+          loopedSlides: 8,
+        },
+      },
+
+      // keep interactions smooth when autoplaying in freeMode
+      // note: these options depend on the Swiper version but are safe in v8/v9
+      touchStartPreventDefault: false,
+      simulateTouch: true,
+      // prevent flick when resizing
+      on: {
+        init() {
+          // minor safety: if autoplay should not run on current breakpoint, stop it
+          const a = this.params.autoplay;
+          if (!a || !a.delay)
+            this.autoplay && this.autoplay.stop && this.autoplay.stop();
+        },
+        breakpoint(swiper, breakpointParams) {
+          // ensure autoplay/freeMode are in expected state after breakpoint change
+          if (swiper.params.autoplay && swiper.params.autoplay.delay === 0) {
+            swiper.autoplay.start();
+          } else {
+            swiper.autoplay.stop && swiper.autoplay.stop();
+          }
+        },
+      },
+    });
+  })();
+
   if (typeof Splide !== "undefined") {
     // Marquee Slider (AutoScroll requires the extension to be loaded)
     const logoSliderEl = document.querySelector(".logo-slider");
@@ -167,16 +323,16 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Case Study Slider
-    const caseStudySliderEl = document.querySelector(".case-study-slider");
-    if (caseStudySliderEl) {
-      new Splide(caseStudySliderEl, {
-        type: "slide",
-        perPage: 1,
-        arrows: true,
-        pagination: false,
-        gap: "22px",
-      }).mount(); // .mount() is crucial!
-    }
+    // const caseStudySliderEl = document.querySelector(".case-study-slider");
+    // if (caseStudySliderEl) {
+    //   new Splide(caseStudySliderEl, {
+    //     type: "slide",
+    //     perPage: 1,
+    //     arrows: true,
+    //     pagination: false,
+    //     gap: "22px",
+    //   }).mount(); // .mount() is crucial!
+    // }
 
     // Case Study Slider
     const testimonialSliderEl = document.querySelector(".testimonial-slider");
@@ -196,10 +352,19 @@ document.addEventListener("DOMContentLoaded", function () {
   //! --- 4. Lenis Scroll (Smooth Scrolling) ---
   if (typeof Lenis !== "undefined" && typeof ScrollTrigger !== "undefined") {
     const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => 1 - Math.pow(1 - t, 3),
-      smooth: true,
-      smoothTouch: false,
+      // duration: 1.2,
+      // easing: (t) => 1 - Math.pow(1 - t, 3),
+      // smooth: true,
+      // smoothTouch: false,
+
+      duration: 0.9, // shorter = snappier response
+      smoothWheel: true,
+      smoothTouch: true,
+      touchMultiplier: 1.6, // increase a bit for mobile feel
+      easing: (t) => 1 - Math.pow(1 - t, 3.2), // custom easing curve like loco
+      direction: "vertical",
+      gestureDirection: "vertical",
+      infinite: false,
     });
 
     lenis.on("scroll", ScrollTrigger.update);
@@ -217,6 +382,12 @@ document.addEventListener("DOMContentLoaded", function () {
         lenis.raf(performance.now());
       }, 100);
     });
+
+    // --- Optional: Adjust scroll speed based on device ---
+    if (window.innerWidth <= 767) {
+      lenis.options.duration = 1.0;
+      lenis.options.touchMultiplier = 2.0;
+    }
   } else {
     console.warn(
       "Lenis or ScrollTrigger not found. Smooth scroll script skipped."
@@ -229,203 +400,352 @@ document.addEventListener("DOMContentLoaded", function () {
   const servicesTrigger = document.querySelector(".our-services");
 
   if (slides.length > 0 && servicesTrigger && typeof gsap !== "undefined") {
-    gsap.set(slides[0], { y: 0 }); // show first slide initially
+    const isMobile = window.innerWidth <= 767;
 
-    const scrollPerSlide = 450; // smaller value = less scroll distance (was 800)
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: servicesTrigger,
-        start: "top top",
-        end: `+=${slides.length * scrollPerSlide}`,
-        scrub: true,
-        pin: true,
-        anticipatePin: 1,
-      },
-    });
+    if (!isMobile) {
+      // === DESKTOP ===
+      gsap.set(slides[0], { y: 0 }); // show first slide initially
 
-    function updateMenu(activeIndex) {
-      menuItems.forEach((li, idx) =>
-        li.classList.toggle("active", idx === activeIndex)
-      );
-    }
+      const scrollPerSlide = 450; // adjust scroll distance per slide
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: servicesTrigger,
+          start: "top top",
+          end: `+=${slides.length * scrollPerSlide}`,
+          scrub: true,
+          pin: true,
+          anticipatePin: 1,
+        },
+      });
 
-    slides.forEach((slide, i) => {
-      if (i !== 0) {
-        tl.to(
-          slide,
-          {
-            y: 0,
-            duration: 0.4, // faster transition
-            ease: "power2.out",
-            onStart: () => tl.scrollTrigger.direction > 0 && updateMenu(i),
-            onReverseComplete: () =>
-              tl.scrollTrigger.direction < 0 && updateMenu(i - 1),
-          },
-          "+=0.3" // shorter delay between slides
+      function updateMenu(activeIndex) {
+        menuItems.forEach((li, idx) =>
+          li.classList.toggle("active", idx === activeIndex)
         );
       }
-    });
 
-    updateMenu(0); // activate first item
+      slides.forEach((slide, i) => {
+        if (i !== 0) {
+          tl.to(
+            slide,
+            {
+              y: 0,
+              duration: 0.4,
+              ease: "power2.out",
+              onStart: () => tl.scrollTrigger.direction > 0 && updateMenu(i),
+              onReverseComplete: () =>
+                tl.scrollTrigger.direction < 0 && updateMenu(i - 1),
+            },
+            "+=0.3"
+          );
+        }
+      });
+
+      updateMenu(0);
+    } else {
+      // === MOBILE ===
+      console.log("📱 Mobile mode: using sticky sidebar + natural scroll");
+
+      // Reset any GSAP styles from desktop view
+      gsap.set(slides, { clearProps: "all" });
+
+      // Make menu sticky
+      const servLeft = document.querySelector(".serv-left");
+      if (servLeft) {
+        servLeft.classList.add("mobile-sticky");
+      }
+
+      // Optional: highlight menu item as user scrolls through each slide
+      slides.forEach((slide, i) => {
+        ScrollTrigger.create({
+          trigger: slide,
+          start: "top center",
+          end: "bottom center",
+          onEnter: () => updateMenu(i),
+          onEnterBack: () => updateMenu(i),
+        });
+      });
+
+      function updateMenu(activeIndex) {
+        menuItems.forEach((li, idx) =>
+          li.classList.toggle("active", idx === activeIndex)
+        );
+      }
+
+      updateMenu(0);
+    }
   } else {
     console.warn(
       "GSAP Pin Section (our-services) elements or library not found. Script skipped."
     );
   }
 
-  //! --- 6. Isotope Filtering/Masonry ---
+  //! --- 6. Case Studies: Isotope + Splide + GSAP Sync ---
   const grid = document.querySelector(".grid");
+  const caseStudyText = document.querySelector(".case-study-text");
+  const templates = document.querySelector(".case-study-templates");
+  const filterButtons = document.querySelectorAll(".filter-btn");
 
+  let iso;
+  let caseStudySlider;
+  let gridItems = [];
+
+  // --- INIT ISOTOPE ---
   if (
     grid &&
     typeof Isotope !== "undefined" &&
     typeof imagesLoaded !== "undefined"
   ) {
-    // wait for images to load
     imagesLoaded(grid, function () {
-      // init isotope after images are loaded
-      const iso = new Isotope(grid, {
+      iso = new Isotope(grid, {
         itemSelector: ".grid-item",
         layoutMode: "masonry",
         percentPosition: true,
-        masonry: {
-          gutter: 30, // space between columns
-        },
+        masonry: { gutter: 30 },
       });
 
-      // filter buttons
-      const filterButtons = document.querySelectorAll(".filter-btn");
+      gridItems = Array.from(grid.querySelectorAll(".grid-item"));
+
+      // Initial Splide
+      buildSplideFromVisibleItems();
+      initGridInteractions();
+
+      // Filter buttons
       filterButtons.forEach((btn) => {
         btn.addEventListener("click", () => {
           filterButtons.forEach((b) => b.classList.remove("active"));
           btn.classList.add("active");
-          let filterValue = btn.getAttribute("data-filter");
+
+          const filterValue = btn.getAttribute("data-filter");
           iso.arrange({ filter: filterValue });
+
+          // Wait for Isotope transition complete
+          iso.once("arrangeComplete", function () {
+            buildSplideFromVisibleItems();
+          });
         });
       });
     });
-  } else {
-    console.warn(
-      "Isotope, imagesLoaded, or grid element not found. Filtering script skipped."
-    );
   }
 
-  //! --- 7. GSAP Animated Tabs (NEW SECTION) ---
-  const tabButtons = document.querySelectorAll(".animated-tabs .tab-btn");
-  const tabContentWrapper = document.querySelector(
-    ".animated-tabs .tab-content-wrapper"
-  );
-  const tabPanes = document.querySelectorAll(".animated-tabs .tab-pane");
+  // --- BUILD SPLIDE FROM VISIBLE ITEMS ---
+  function buildSplideFromVisibleItems() {
+    const visibleItems = Array.from(
+      grid.querySelectorAll(".grid-item:not([style*='display: none'])")
+    );
 
-  if (
-    tabButtons.length > 0 &&
-    tabContentWrapper &&
-    tabPanes.length > 0 &&
-    typeof gsap !== "undefined"
-  ) {
-    // 1. Initial Setup: Hide all non-active tabs
-    gsap.set(tabPanes, {
-      opacity: 0,
+    const splideList = document.querySelector(
+      ".case-study-slider .splide__list"
+    );
+    splideList.innerHTML = "";
+
+    // Rebuild slides
+    visibleItems.forEach((item) => {
+      const img = item.querySelector("img");
+      if (!img) return;
+      const slide = document.createElement("li");
+      slide.className = "splide__slide";
+      slide.innerHTML = `<div class="splide__slide__container"><img src="${img.src}" alt=""></div>`;
+      splideList.appendChild(slide);
+    });
+
+    // Destroy previous Splide if exists
+    if (caseStudySlider) {
+      caseStudySlider.destroy(true);
+    }
+
+    // Reinitialize Splide
+    if (visibleItems.length > 0) {
+      caseStudySlider = new Splide(".case-study-slider", {
+        type: "slide",
+        perPage: 1,
+        arrows: true,
+        pagination: false,
+        gap: "22px",
+        rewind: true,
+        speed: 800,
+      }).mount();
+
+      // On slide move → change text
+      caseStudySlider.on("move", function (newIndex) {
+        const activeItem = visibleItems[newIndex];
+        if (activeItem) {
+          visibleItems.forEach((el) => el.classList.remove("active"));
+          activeItem.classList.add("active");
+          updateCaseContent(activeItem.dataset.case);
+        }
+      });
+
+      // Set first visible as active initially
+      visibleItems.forEach((el) => el.classList.remove("active"));
+      visibleItems[0].classList.add("active");
+      updateCaseContent(visibleItems[0].dataset.case);
+    } else {
+      console.warn("⚠️ No visible items found after filter!");
+    }
+
+    initGridInteractions(visibleItems);
+  }
+
+  // --- GRID ITEM CLICK BEHAVIOR ---
+  function initGridInteractions(items = gridItems) {
+    items.forEach((item, index) => {
+      item.addEventListener("click", () => {
+        items.forEach((el) => el.classList.remove("active"));
+        item.classList.add("active");
+        const caseId = item.dataset.case;
+        updateCaseContent(caseId);
+        if (caseStudySlider) caseStudySlider.go(index);
+      });
+    });
+  }
+
+  // --- UPDATE TEXT CONTENT (Apple-like smooth animation) ---
+  function updateCaseContent(caseId) {
+    const template = templates.querySelector(`#${caseId}`);
+    if (!template) return;
+    const newContent = template.innerHTML;
+
+    // Animate old content out + new content in
+    const tl = gsap.timeline({
+      defaults: { ease: "power2.inOut" },
+    });
+
+    tl.to(caseStudyText, {
+      filter: "blur(6px)",
+      autoAlpha: 0,
       y: 30,
-      position: "absolute",
-      visibility: "hidden",
+      scale: 0.98,
+      duration: 0.4,
+      onComplete: () => {
+        caseStudyText.innerHTML = newContent;
+      },
     });
 
-    const initialActiveTab = document.querySelector(
-      ".animated-tabs .tab-pane.active"
-    );
+    tl.to(caseStudyText, {
+      filter: "blur(0px)",
+      autoAlpha: 1,
+      y: 0,
+      scale: 1,
+      duration: 0.5,
+    });
+  }
 
-    // 2. Set the initial active tab correctly
-    if (initialActiveTab) {
-      gsap.set(initialActiveTab, {
-        opacity: 1,
-        y: 0,
-        position: "relative",
-        visibility: "visible",
-      });
-    }
+  //! --- 7. GSAP Animated Tabs (Desktop + Mobile Dropdown) ---
+  const tabsSection = document.querySelector(".animated-tabs");
+  if (!tabsSection) return;
 
-    let activeTab = initialActiveTab;
-    let isAnimating = false;
+  const tabButtonsContainer = tabsSection.querySelector(".tab-buttons");
+  const tabButtons = tabButtonsContainer.querySelectorAll(".tab-btn");
+  const tabContentWrapper = tabsSection.querySelector(".tab-content-wrapper");
+  const tabPanes = tabContentWrapper.querySelectorAll(".tab-pane");
 
-    function switchTab(newTabId) {
-      if (isAnimating) return;
+  // --- Create dropdown for mobile ---
+  const dropdown = document.createElement("div");
+  dropdown.className = "tab-dropdown";
+  dropdown.innerHTML = `
+    <div class="tab-dropdown-selected">
+      ${tabButtonsContainer.querySelector(".active")?.textContent || "Select"}
+    </div>
+    <ul class="tab-dropdown-list">
+      ${Array.from(tabButtons)
+        .map(
+          (btn) =>
+            `<li data-tab="${btn.dataset.tab}" class="${
+              btn.classList.contains("active") ? "active" : ""
+            }">${btn.textContent}</li>`
+        )
+        .join("")}
+    </ul>
+  `;
 
-      const newTab = document.querySelector(`[data-tab-content="${newTabId}"]`);
-      if (newTab === activeTab) return;
+  // Insert dropdown after tab-buttons safely
+  tabButtonsContainer.parentNode.insertBefore(
+    dropdown,
+    tabButtonsContainer.nextSibling
+  );
 
-      isAnimating = true;
+  const selected = dropdown.querySelector(".tab-dropdown-selected");
+  const list = dropdown.querySelector(".tab-dropdown-list");
 
-      // A. Outgoing Tab Animation (Slide Down and Fade Out)
-      gsap.to(activeTab, {
+  // --- Dropdown toggle animation ---
+  selected.addEventListener("click", () => {
+    const isOpen = list.classList.toggle("open");
+    gsap.to(list, {
+      height: isOpen ? "auto" : 0,
+      opacity: isOpen ? 1 : 0,
+      duration: 0.3,
+      ease: "power2.out",
+      onStart: () => {
+        if (isOpen) list.style.display = "block";
+      },
+      onComplete: () => {
+        if (!isOpen) list.style.display = "none";
+      },
+    });
+  });
+
+  // --- Dropdown item click ---
+  list.querySelectorAll("li").forEach((li) => {
+    li.addEventListener("click", () => {
+      const tabName = li.dataset.tab;
+      setActiveTab(tabName);
+      selected.textContent = li.textContent;
+      gsap.to(list, {
+        height: 0,
         opacity: 0,
-        y: 30, // Slide down
-        duration: 0.3,
+        duration: 0.25,
         ease: "power2.inOut",
-        onComplete: () => {
-          // Hide and reset outgoing tab
-          activeTab.classList.remove("active");
-          activeTab.style.position = "absolute";
-          activeTab.style.visibility = "hidden";
-
-          const newHeight = newTab.scrollHeight;
-
-          // B. Incoming Tab Animation (Height adjustment + Slide Up and Fade In)
-          gsap
-            .timeline({
-              onComplete: () => {
-                isAnimating = false;
-                activeTab = newTab; // Set new tab as active for next click
-              },
-            })
-            .set(newTab, {
-              y: -30, // Start new tab from sliding up
-              position: "relative",
-              visibility: "visible",
-            })
-            .to(
-              tabContentWrapper,
-              {
-                height: newHeight,
-                duration: 0.4,
-                ease: "power2.inOut",
-              },
-              0
-            )
-            .to(
-              newTab,
-              {
-                opacity: 1,
-                y: 0,
-                duration: 0.4,
-                ease: "power2.inOut",
-                onStart: () => newTab.classList.add("active"),
-              },
-              0.1
-            );
-        },
-      });
-    }
-
-    // Initialize content wrapper height based on the active tab
-    if (initialActiveTab) {
-      tabContentWrapper.style.height = `${initialActiveTab.scrollHeight}px`;
-    }
-
-    // Attach click listeners to buttons
-    tabButtons.forEach((button) => {
-      button.addEventListener("click", () => {
-        tabButtons.forEach((btn) => btn.classList.remove("active"));
-        button.classList.add("active");
-
-        const tabId = button.getAttribute("data-tab");
-        switchTab(tabId);
+        onComplete: () => list.classList.remove("open"),
       });
     });
-  } else {
-    console.warn(
-      "GSAP Animated Tabs: Required elements or library not found. Script skipped."
+  });
+
+  // --- Tab click (desktop) ---
+  tabButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const tabName = btn.dataset.tab;
+      setActiveTab(tabName);
+      selected.textContent = btn.textContent;
+    });
+  });
+
+  // --- Core tab switch animation ---
+  function setActiveTab(tabName) {
+    tabButtons.forEach((b) =>
+      b.classList.toggle("active", b.dataset.tab === tabName)
     );
+    list
+      .querySelectorAll("li")
+      .forEach((li) =>
+        li.classList.toggle("active", li.dataset.tab === tabName)
+      );
+
+    tabPanes.forEach((pane) => {
+      if (pane.dataset.tabContent === tabName) {
+        gsap.to(pane, {
+          opacity: 1,
+          y: 0,
+          duration: 0.45,
+          display: "block",
+          onStart: () => {
+            pane.classList.add("active");
+            pane.style.visibility = "visible";
+          },
+        });
+      } else {
+        gsap.to(pane, {
+          opacity: 0,
+          y: 20,
+          duration: 0.3,
+          display: "none",
+          onComplete: () => {
+            pane.classList.remove("active");
+            pane.style.visibility = "hidden";
+          },
+        });
+      }
+    });
   }
 
   //! --- 8. File upload animation ---
@@ -501,8 +821,8 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   //! --- 10. Footer Scroll Text Animation ---
-  //! --- Footer Scroll Text Animation (refined stagger effect) ---
   const footerSection = document.querySelector(".mainft");
+
   if (
     footerSection &&
     typeof gsap !== "undefined" &&
@@ -512,48 +832,191 @@ document.addEventListener("DOMContentLoaded", function () {
     const topLayers = footerSection.querySelectorAll(".top1, .top2, .top3");
     const bottomLayers = footerSection.querySelectorAll(".bottom1, .bottom2");
 
+    // detect mobile
+    const isMobile = window.innerWidth <= 767;
+
+    // movement strength (tighter on mobile)
+    const baseY = isMobile ? 30 : 60; // reduced Y movement on mobile
+    const stepY = isMobile ? 30 : 30; // tighter spacing between layers
+
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: footerSection,
-        start: "top 80%",
+        start: "top -30%",
         once: true,
       },
-      delay: 1.2,
     });
 
-    // all layers fade in almost together, but farther layers delay a little
     const baseDuration = 1.2;
 
-    // upper layers (translateY negative)
+    // main layer fade
+    tl.fromTo(
+      mainText,
+      { opacity: 0, scale: 1.05 },
+      { opacity: 1, scale: 1, duration: 1, ease: "power3.out" },
+      0
+    );
+
+    // upper layers (move up)
     topLayers.forEach((el, i) => {
       tl.fromTo(
         el,
         { opacity: 0, y: 0, scale: 1 },
         {
           opacity: 0.5 - i * 0.1,
-          y: -(60 + i * 30),
+          y: -(baseY + i * stepY),
           scale: 1,
           duration: baseDuration,
           ease: "power3.out",
         },
-        0 + i * 0.15 // small stagger
+        0.15 + i * 0.15
       );
     });
 
-    // lower layers (translateY positive)
+    // lower layers (move down)
     bottomLayers.forEach((el, i) => {
       tl.fromTo(
         el,
         { opacity: 0, y: 0, scale: 1 },
         {
           opacity: 0.4 - i * 0.1,
-          y: 60 + i * 30,
+          y: baseY + i * stepY,
           scale: 1,
           duration: baseDuration,
           ease: "power3.out",
         },
-        0.1 + i * 0.15 // slight offset to keep depth feel
+        0.2 + i * 0.15
       );
     });
   }
+
+  //! --- 11. Stats Counter Animation (Smooth, Luxurious Version) ---
+  //! --- Stats Counter Animation (Starts from 0, Smooth Motion) ---
+  const statsSection = document.querySelector(".stats");
+
+  if (
+    statsSection &&
+    typeof gsap !== "undefined" &&
+    typeof ScrollTrigger !== "undefined"
+  ) {
+    const counters = statsSection.querySelectorAll("h6");
+    const icons = statsSection.querySelectorAll(".icon img");
+    const items = statsSection.querySelectorAll("li");
+
+    // --- Set initial state ---
+    counters.forEach((counter) => {
+      counter.textContent = "0";
+    });
+    gsap.set(items, { opacity: 0, y: 30 });
+    gsap.set(icons, { rotation: 0 });
+
+    // --- Main timeline ---
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: statsSection,
+        start: "top 80%", // when section enters viewport
+        once: true,
+      },
+    });
+
+    // --- Fade-in + upward slide for list items ---
+    tl.to(items, {
+      opacity: 1,
+      y: 0,
+      duration: 0.9,
+      ease: "power3.out",
+      stagger: 0.15,
+    });
+
+    // --- Smooth icon rotation (gentle ease) ---
+    tl.to(
+      icons,
+      {
+        rotation: 360,
+        duration: 2.2,
+        ease: "power2.inOut",
+        stagger: 0.2,
+      },
+      "<"
+    ); // starts together with fade
+
+    // --- Counter animation (count up smoothly) ---
+    counters.forEach((counter, i) => {
+      const text =
+        counter.getAttribute("data-target") || counter.textContent.trim();
+      const numericValue = parseInt(text.replace(/\D/g, ""), 10);
+      const suffix = text.replace(/[0-9]/g, "");
+      const obj = { val: 0 };
+
+      tl.to(
+        obj,
+        {
+          val: numericValue,
+          duration: 2.4,
+          ease: "power3.out",
+          onUpdate: () => {
+            counter.textContent = Math.floor(obj.val).toLocaleString() + suffix;
+          },
+          onComplete: () => {
+            // Subtle pulse when number completes
+            gsap.to(counter, {
+              scale: 1.15,
+              duration: 0.25,
+              ease: "power1.out",
+              yoyo: true,
+              repeat: 1,
+            });
+          },
+        },
+        0.4 + i * 0.25
+      );
+    });
+  }
+
+  // ! -- 12. Aos animation
+  AOS.init({
+    duration: 1000, // animation speed (ms)
+    once: true, // animate only once
+    easing: "ease-out-cubic",
+  });
+
+  // ! -- 13. Aos animation
+  const phoneInput = document.querySelector("#phone");
+  const iti = window.intlTelInput(phoneInput, {
+    initialCountry: "in", // default country (India)
+    preferredCountries: ["in", "us", "gb", "ca", "au"],
+    separateDialCode: true,
+    utilsScript:
+      "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.6.1/js/utils.js",
+  });
+
+  // ! -- 14. Responsive structure change
+  const ftContact = document.querySelector(".ftcontact");
+  const ftMenus = document.querySelector(".ftmenurow");
+  const ftmenusWrapper = document.querySelector(".ftmenus");
+
+  function moveFooterContact() {
+    if (!ftContact || !ftMenus || !ftmenusWrapper) return;
+
+    if (window.innerWidth <= 767) {
+      const allFtMenus = ftMenus.querySelectorAll(".ftmenu");
+      const lastMenu = allFtMenus[allFtMenus.length - 1];
+
+      // Move ftcontact after last ftmenu
+      lastMenu.insertAdjacentElement("afterend", ftContact);
+    } else {
+      // Move ftcontact back to its original position (after .ftmenus)
+      ftmenusWrapper.insertAdjacentElement("afterend", ftContact);
+    }
+  }
+
+  // Run on load
+  moveFooterContact();
+
+  // Run on resize (debounced for performance)
+  let resizeTimeout;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(moveFooterContact, 200);
+  });
 });

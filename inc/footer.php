@@ -156,8 +156,13 @@
                             <div class="loc-icon">
                                 <img src="images/ft-location-1.png" alt="">
                             </div>
-                            <h6>INDIA / Kolkata</h6>
-                            <p>INDIA: CN-8/2, Room No- 604 6th Floor, Sector V, Salt Lake, Kolkata West Bengal, 700091</p>
+                            <div class="mobile-hide">
+                                <h6>INDIA / Kolkata</h6>
+                                <p>INDIA: CN-8/2, Room No- 604 6th Floor, Sector V, Salt Lake, Kolkata West Bengal, 700091</p>
+                            </div>
+                            <div class="see-location">
+                                <a href="#!">See Location <img src="images/res-location-icon.png" alt=""></a>
+                            </div>
                         </div>
                     </div>
 
@@ -166,8 +171,13 @@
                             <div class="loc-icon">
                                 <img src="images/ft-location-2.png" alt="">
                             </div>
-                            <h6>USA</h6>
-                            <p>INDIA: CN-8/2, Room No- 604 6th Floor, Sector V, Salt Lake, Kolkata West Bengal, 700091</p>
+                            <div class="mobile-hide">
+                                <h6>USA</h6>
+                                <p>INDIA: CN-8/2, Room No- 604 6th Floor, Sector V, Salt Lake, Kolkata West Bengal, 700091</p>
+                            </div>
+                            <div class="see-location">
+                                <a href="#!">See Location <img src="images/res-location-icon.png" alt=""></a>
+                            </div>
                         </div>
                     </div>
 
@@ -176,8 +186,13 @@
                             <div class="loc-icon">
                                 <img src="images/ft-location-3.png" alt="">
                             </div>
-                            <h6>Canada</h6>
-                            <p>INDIA: CN-8/2, Room No- 604 6th Floor, Sector V, Salt Lake, Kolkata West Bengal, 700091</p>
+                            <div class="mobile-hide">
+                                <h6>Canada</h6>
+                                <p>INDIA: CN-8/2, Room No- 604 6th Floor, Sector V, Salt Lake, Kolkata West Bengal, 700091</p>
+                            </div>
+                            <div class="see-location">
+                                <a href="#!">See Location <img src="images/res-location-icon.png" alt=""></a>
+                            </div>
                         </div>
                     </div>
 
@@ -186,8 +201,13 @@
                             <div class="loc-icon">
                                 <img src="images/ft-location-4.png" alt="">
                             </div>
-                            <h6>Australia</h6>
-                            <p>INDIA: CN-8/2, Room No- 604 6th Floor, Sector V, Salt Lake, Kolkata West Bengal, 700091</p>
+                            <div class="mobile-hide">
+                                <h6>Australia</h6>
+                                <p>INDIA: CN-8/2, Room No- 604 6th Floor, Sector V, Salt Lake, Kolkata West Bengal, 700091</p>
+                            </div>
+                            <div class="see-location">
+                                <a href="#!">See Location <img src="images/res-location-icon.png" alt=""></a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -242,6 +262,7 @@
     <!-- Script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/js/bootstrap.min.js" integrity="sha512-nKXmKvJyiGQy343jatQlzDprflyB5c+tKCzGP3Uq67v+lmzfnZUi/ZT+fc6ITZfSC5HhaBKUIvr/nTLCV+7F+Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- Load Splide Core JS -->
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
     <!-- Load Splide AutoScroll Extension for the Marquee Effect -->
@@ -253,6 +274,8 @@
     <!-- ImagesLoaded -->
     <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1/bundled/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.4/build/js/intlTelInput.min.js"></script>
     <script src="js/app.js"></script>
     </body>
 
