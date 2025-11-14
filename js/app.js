@@ -309,6 +309,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (typeof Splide !== "undefined") {
     // Marquee Slider (AutoScroll requires the extension to be loaded)
     const logoSliderEl = document.querySelector(".logo-slider");
+
     if (logoSliderEl) {
       new Splide(logoSliderEl, {
         type: "loop",
@@ -317,9 +318,18 @@ document.addEventListener("DOMContentLoaded", function () {
         pagination: false,
         focus: "center",
         gap: "1em",
-        // The mount argument assumes the AutoScroll extension is correctly loaded
+
+        breakpoints: {
+          767: {
+            perPage: 3, // 👈 show 3 logos on mobile
+            gap: "0.6em",
+          },
+          480: {
+            perPage: 2, // optional — even fewer on very small screens
+            gap: "0.5em",
+          },
+        },
       }).mount(window.splide ? window.splide.Extensions : {});
-      // Added a safety check for window.splide
     }
 
     // Case Study Slider
