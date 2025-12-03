@@ -42,8 +42,9 @@
                     <ul class="menu">
                         <li class="active"><a href="#">Home</a></li>
 
-                        <li class="has-megamenu">
-                            <a href="#">About Us</a>
+                        <li class="has-megamenu mobile-submenu">
+                            <a href="#">About Us <span class="mobile-arrow"></span> <!-- Added for mobile --></a>
+
                             <div class="megamenu">
                                 <div class="mega-left">
                                     <ul>
@@ -69,8 +70,8 @@
                             </div>
                         </li>
 
-                        <li class="menu-item has-megamenu">
-                            <a href="#">Services</a>
+                        <li class="menu-item has-megamenu mobile-submenu">
+                            <a href="#">Services <span class="mobile-arrow"></span> <!-- Added for mobile --></a>
                             <div class="megamenu services-megamenu">
                                 <div class="mega-content">
                                     <div class="mega-column">
@@ -175,9 +176,13 @@
                         <li><a href="#">Careers</a></li>
                     </ul>
                 </nav>
-                <button class="menu-toggle" aria-expanded="false" aria-label="Toggle Menu">
-                    <span></span><span></span><span></span>
-                </button>
+
+                <div class="menutext">
+                    <span>Menu</span>
+                    <button class="menu-toggle" aria-expanded="false" aria-label="Toggle Menu">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
 
                 <div class="headbtn">
                     <a href="#!" class="btn has-icon">Contact Us <span><img src="images/arrow-long-right.png" alt=""></span></a>

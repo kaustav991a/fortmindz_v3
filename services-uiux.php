@@ -9,6 +9,21 @@
     <div class="container">
         <div class="banner-row">
             <div class="banner-left" data-aos="fade-right" data-aos-delay="300">
+                <div class="breadcrumb-section">
+                    <div class="container">
+                        <ul>
+                            <li>
+                                <a href="#!">Home</a>
+                            </li>
+                            <li>
+                                <a href="#!">Services</a>
+                            </li>
+                            <li>
+                                <span>UI/UX Design</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
                 <h1 class="heading">
                     Comprehensive UI/UX Design Services in Kolkata
                 </h1>
@@ -29,22 +44,6 @@
                 </div>
             </div>
         </div>
-    </div>
-</section>
-
-<section class="breadcrumb-section">
-    <div class="container">
-        <ul>
-            <li>
-                <a href="#!">Home</a>
-            </li>
-            <li>
-                <a href="#!">Services</a>
-            </li>
-            <li>
-                <span>UI/UX Design</span>
-            </li>
-        </ul>
     </div>
 </section>
 
@@ -138,7 +137,7 @@
                     </div>
                 </div>
                 <div class="col-md-8">
-                    <div class="row">
+                    <div class="row tabswitcher">
                         <div class="col-md-4">
                             <div class="tabimg">
                                 <img src="images/uiux-tabimg.jpg" alt="">
@@ -150,263 +149,75 @@
                                 <p>Our product design services go beyond visuals—we blend functionality, aesthetics, and strategy to create digital experiences that truly connect with users. From conceptualization to final design, we ensure every element aligns with your brand identity and business goals. Our team focuses on usability, accessibility, and performance, crafting designs that not only look stunning but also enhance engagement and conversion. Whether you’re building a new digital product or redesigning an existing one, we deliver intuitive, human-centered solutions that drive measurable results.</p>
                                 <div class="button-container">
                                     <a href="#!" class="btn has-icon">Get Started <span><img src="images/arrow-long-right.png" alt=""></span></a>
-                                    <a href="#!" class="btn btn-black">View Our Work</a>
+                                    <a href="#!" class="btn btn-black">Talk to Our Expert</a>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <!-- !  ! -->
+                    <div class="row tabswitcher">
+                        <div class="col-md-4">
+                            <div class="tabimg">
+                                <img src="images/uiux-tabimg.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="tabcontent">
+                                <h5>2. Transform your ideas into intuitive, visually stunning digital products. Our designs balance beauty, usability, and business impact.</h5>
+                                <p>Our product design services go beyond visuals—we blend functionality, aesthetics, and strategy to create digital experiences that truly connect with users. From conceptualization to final design, we ensure every element aligns with your brand identity and business goals. Our team focuses on usability, accessibility, and performance, crafting designs that not only look stunning but also enhance engagement and conversion. Whether you’re building a new digital product or redesigning an existing one, we deliver intuitive, human-centered solutions that drive measurable results.</p>
+                                <div class="button-container">
+                                    <a href="#!" class="btn has-icon">Get Started <span><img src="images/arrow-long-right.png" alt=""></span></a>
+                                    <a href="#!" class="btn btn-black">Talk to Our Expert</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- !  ! -->
+                    <div class="row tabswitcher">
+                        <div class="col-md-4">
+                            <div class="tabimg">
+                                <img src="images/uiux-tabimg.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="tabcontent">
+                                <h5>3. Transform your ideas into intuitive, visually stunning digital products. Our designs balance beauty, usability, and business impact.</h5>
+                                <p>Our product design services go beyond visuals—we blend functionality, aesthetics, and strategy to create digital experiences that truly connect with users. From conceptualization to final design, we ensure every element aligns with your brand identity and business goals. Our team focuses on usability, accessibility, and performance, crafting designs that not only look stunning but also enhance engagement and conversion. Whether you’re building a new digital product or redesigning an existing one, we deliver intuitive, human-centered solutions that drive measurable results.</p>
+                                <div class="button-container">
+                                    <a href="#!" class="btn has-icon">Get Started <span><img src="images/arrow-long-right.png" alt=""></span></a>
+                                    <a href="#!" class="btn btn-black">Talk to Our Expert</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- !  ! -->
+                    <div class="row tabswitcher">
+                        <div class="col-md-4">
+                            <div class="tabimg">
+                                <img src="images/uiux-tabimg.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="tabcontent">
+                                <h5>4. Transform your ideas into intuitive, visually stunning digital products. Our designs balance beauty, usability, and business impact.</h5>
+                                <p>Our product design services go beyond visuals—we blend functionality, aesthetics, and strategy to create digital experiences that truly connect with users. From conceptualization to final design, we ensure every element aligns with your brand identity and business goals. Our team focuses on usability, accessibility, and performance, crafting designs that not only look stunning but also enhance engagement and conversion. Whether you’re building a new digital product or redesigning an existing one, we deliver intuitive, human-centered solutions that drive measurable results.</p>
+                                <div class="button-container">
+                                    <a href="#!" class="btn has-icon">Get Started <span><img src="images/arrow-long-right.png" alt=""></span></a>
+                                    <a href="#!" class="btn btn-black">Talk to Our Expert</a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 </section>
 
-<section class="ideas">
-    <div class="container">
-        <div class="subheading" data-aos="fade-up" data-aos-delay="100">
-            <h6>Innovation. Design. Engineering.</h6>
-            <div class="sq sq1" data-aos="zoom-in" data-aos-delay="200"></div>
-            <div class="sq sq2" data-aos="zoom-in" data-aos-delay="300"></div>
-            <div class="sq sq3" data-aos="zoom-in" data-aos-delay="400"></div>
-            <div class="sq sq4" data-aos="zoom-in" data-aos-delay="500"></div>
-        </div>
-
-        <div class="mxw-853" data-aos="fade-up" data-aos-delay="600">
-            <h2>
-                From <span data-aos="fade-up" data-aos-delay="700">Ideas</span> to
-                <span data-aos="fade-up" data-aos-delay="800">Impactful Technology</span>
-            </h2>
-            <p data-aos="fade-up" data-aos-delay="900">
-                Build Smarter Digital Solutions with Fortmindz – Kolkata’s trusted software
-                development partner. From web and mobile apps to cloud and custom solutions,
-                we craft technology that grows your business. Let’s turn your idea into reality today.
-            </p>
-            <a href="#!" class="btn btn-black" data-aos="zoom-in" data-aos-delay="1000">Let’s Get Started</a>
-        </div>
-
-        <div class="stats">
-            <ul>
-                <li>
-                    <div class="icon">
-                        <img src="images/stats-1-icon.png" alt="">
-                    </div>
-                    <div class="text">
-                        <h6 data-target="14+">0</h6>
-                        <span>Years of Expertise</span>
-                    </div>
-                </li>
-                <li>
-                    <div class="icon">
-                        <img src="images/stats-1-icon.png" alt="">
-                    </div>
-                    <div class="text">
-                        <h6 data-target="4+">0</h6>
-                        <span>Awards in Last 1 Year</span>
-                    </div>
-                </li>
-                <li>
-                    <div class="icon">
-                        <img src="images/stats-3-icon.png" alt="">
-                    </div>
-                    <div class="text">
-                        <h6 data-target="100+">0</h6>
-                        <span>In-house Experts</span>
-                    </div>
-                </li>
-                <li>
-                    <div class="icon">
-                        <img src="images/stats-4-icon.png" alt="">
-                    </div>
-                    <div class="text">
-                        <h6 data-target="850+">0</h6>
-                        <span>Successful Projects</span>
-                    </div>
-                </li>
-                <li>
-                    <div class="icon">
-                        <img src="images/stats-5-icon.png" alt="">
-                    </div>
-                    <div class="text">
-                        <h6 data-target="450+">0</h6>
-                        <span>Satisfied Clients</span>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </div>
-</section>
-
-<section class="our-services pt-0">
-    <div class="container">
-        <div class="servlogoarea" data-aos="fade-up" data-aos-delay="100">
-            <img src="images/services-logo.png" alt="">
-        </div>
-        <div class="row">
-            <div class="col-md-3" data-aos="fade-right" data-aos-delay="200">
-                <div class="spacing">
-
-                </div>
-            </div>
-            <div class="col-md-9" data-aos="fade-left" data-aos-delay="300">
-                <div class="serv-right">
-                    <div class="subheading" data-aos="zoom-in" data-aos-delay="400">
-                        <h6>Our Services</h6>
-                        <div class="sq sq1"></div>
-                        <div class="sq sq2"></div>
-                        <div class="sq sq3"></div>
-                        <div class="sq sq4"></div>
-                    </div>
-                    <h2 data-aos="fade-up" data-aos-delay="500">Comprehensive Digital Solutions for Every Stage</h2>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3" data-aos="fade-right" data-aos-delay="600">
-                <div class="serv-left">
-                    <ul>
-                        <li class="active">
-                            Digital Products
-                        </li>
-                        <li>
-                            Design & Experience
-                        </li>
-                        <li>
-                            Engineering & Development
-                        </li>
-                        <li>
-                            Quality & Growth
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-9" data-aos="fade-up" data-aos-delay="700">
-                <div class="serv-scroll-slide">
-                    <div class="slide-inner">
-                        <h4>Digital Products</h4>
-                        <div class="slide-row">
-                            <div class="slidebx" data-aos="zoom-in" data-aos-delay="900">
-                                <div class="icon">
-                                    <img src="images/digi-prod-1.png" alt="">
-                                </div>
-                                <h5>Mobile App<br> Development</h5>
-                                <p>Create engaging mobile experiences for iOS & Android with seamless performance.</p>
-                            </div>
-
-                            <div class="slidebx" data-aos="zoom-in" data-aos-delay="900">
-                                <div class="icon">
-                                    <img src="images/digi-prod-2.png" alt="">
-                                </div>
-                                <h5>Web<br> Development</h5>
-                                <p>Build responsive, scalable websites tailored to your business needs and designed for growth.</p>
-                            </div>
-
-                            <div class="slidebx" data-aos="zoom-in" data-aos-delay="900">
-                                <div class="icon">
-                                    <img src="images/digi-prod-3.png" alt="">
-                                </div>
-                                <h5>E-Commerce<br> Solutions</h5>
-                                <p>Develop secure, conversion-driven online stores that scale with your brand.</p>
-                            </div>
-                        </div>
-                        <!-- Buttons -->
-                        <div class="button-container">
-                            <a href="#!" class="btn has-icon">Explore More <span><img src="images/arrow-long-right.png" alt=""></span></a>
-                            <a href="#!" class="btn btn-white">Talk to Our Expert</a>
-                        </div>
-                    </div>
-
-                    <div class="slide-inner">
-                        <h4>Design & Experience</h4>
-                        <div class="slide-row two-slide">
-                            <div class="slidebx">
-                                <div class="icon">
-                                    <img src="images/digi-prod-1.png" alt="">
-                                </div>
-                                <h5>UI/UX Design</h5>
-                                <p>Design intuitive interfaces that delight users and boost engagement.</p>
-                            </div>
-
-                            <div class="slidebx ">
-                                <div class="icon">
-                                    <img src="images/digi-prod-2.png" alt="">
-                                </div>
-                                <h5>Logo & Graphic Design</h5>
-                                <p>Build strong brand identities with impactful visuals and consistent storytelling.</p>
-                            </div>
-                        </div>
-                        <!-- Buttons -->
-                        <div class="button-container">
-                            <a href="#!" class="btn has-icon">Get Started <span><img src="images/arrow-long-right.png" alt=""></span></a>
-                            <a href="#!" class="btn btn-black">View Our Work</a>
-                        </div>
-                    </div>
-
-                    <div class="slide-inner">
-                        <h4>Engineering & Development</h4>
-                        <div class="slide-row">
-                            <div class="slidebx">
-                                <div class="icon">
-                                    <img src="images/engine-prod-1.png" alt="">
-                                </div>
-                                <h5>Full Stack<br> Development</h5>
-                                <p>End-to-end engineering solutions with modern frameworks for speed and security.</p>
-                            </div>
-
-                            <div class="slidebx">
-                                <div class="icon">
-                                    <img src="images/engine-prod-2.png" alt="">
-                                </div>
-                                <h5>Custom Software<br> Development</h5>
-                                <p>Tailored software that meets your unique business challenges.</p>
-                            </div>
-
-                            <div class="slidebx">
-                                <div class="icon">
-                                    <img src="images/engine-prod-3.png" alt="">
-                                </div>
-                                <h5>Cloud<br> Engineering</h5>
-                                <p>Leverage cloud-native solutions for scalability, security, and efficiency.</p>
-                            </div>
-                        </div>
-                        <!-- Buttons -->
-                        <div class="button-container">
-                            <a href="#!" class="btn has-icon">Get Started <span><img src="images/arrow-long-right.png" alt=""></span></a>
-                            <a href="#!" class="btn btn-black">View Our Work</a>
-                        </div>
-                    </div>
-
-                    <div class="slide-inner">
-                        <h4>Quality & Growth</h4>
-                        <div class="slide-row two-slide">
-                            <div class="slidebx">
-                                <div class="icon">
-                                    <img src="images/quality-prod-1.png" alt="">
-                                </div>
-                                <h5>QA & Testing</h5>
-                                <p>Ensure flawless performance with manual and automated testing.</p>
-                            </div>
-
-                            <div class="slidebx ">
-                                <div class="icon">
-                                    <img src="images/quality-prod-2.png" alt="">
-                                </div>
-                                <h5>Digital Marketing</h5>
-                                <p>Boost visibility and conversions with data-driven campaigns.</p>
-                            </div>
-                        </div>
-                        <!-- Buttons -->
-                        <div class="button-container">
-                            <a href="#!" class="btn has-icon">Get Started <span><img src="images/arrow-long-right.png" alt=""></span></a>
-                            <a href="#!" class="btn btn-black">View Our Work</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="industry" style="background: #f4f4f4 url(images/banner-grid.png) repeat-y 0 0; background-size: contain;">
+<section class="industry canchangeheadingwidth" style="background: #f4f4f4 url(images/banner-grid.png) repeat-y 0 0; background-size: contain;">
     <div class="container">
         <div class="subheading" data-aos="fade-down">
             <h6>Industry</h6>
@@ -415,11 +226,11 @@
             <div class="sq sq3"></div>
             <div class="sq sq4"></div>
         </div>
-        <h2 data-aos="fade-up" data-aos-delay="100">Let’s work together <span>anywhere around the world</span></h2>
-        <p data-aos="fade-up" data-aos-delay="200">Business isn't one size fits all. Every industry requires a custom solution. Learn more about how we've helped businesses in your industry by clicking below.</p>
-        <div class="grid-container" data-aos="zoom-in" data-aos-delay="300">
+        <h2>We Design UI/UX for <span>diverse industries</span></h2>
+        <p>Business isn't one size fits all. Every industry requires a custom solution. Learn more about how we've helped businesses in your industry by clicking below.</p>
+        <div class="grid-container">
             <!-- First Row -->
-            <div class="grid-row" data-aos="zoom-in" data-aos-delay="400">
+            <div class="grid-row">
                 <!-- Box 1 -->
                 <div class="box" tabindex="0" role="button" aria-expanded="false">
                     <div class="box-inner">
@@ -512,7 +323,7 @@
             </div>
 
             <!-- Second Row -->
-            <div class="grid-row" data-aos="zoom-in" data-aos-delay="500">
+            <div class="grid-row">
                 <!-- Box 5 -->
                 <div class="box" tabindex="0" role="button" aria-expanded="false">
                     <div class="box-inner">
@@ -620,57 +431,61 @@
                     </div>
                 </div>
             </div>
+
+            <div class="button-container">
+                <a href="#!" class="btn has-icon">Get Started <span><img src="images/arrow-long-right.png" alt=""></span></a>
+                <a href="#!" class="btn btn-black">Talk to Our Expert</a>
+            </div>
         </div>
     </div>
 </section>
 
-<section class="case-studies" data-aos="fade-up" data-aos-duration="800">
+<section class="case-studies removegrid">
     <div class="container">
         <div class="isotope-outer">
-            <div class="subheading" data-aos="fade-down" data-aos-delay="100">
+            <div class="subheading">
                 <h6>Case Studies</h6>
                 <div class="sq sq1"></div>
                 <div class="sq sq2"></div>
                 <div class="sq sq3"></div>
                 <div class="sq sq4"></div>
             </div>
-            <h2 data-aos="fade-up" data-aos-delay="200">Our Work, Driving <span>Real</span> Results</h2>
-            <p data-aos="fade-up" data-aos-delay="300">Explore how we’ve helped businesses across industries innovate, scale, and grow.</p>
+            <h2>Case Studies & Success Stories</h2>
+            <p>See how we helped clinics, fitness centers, and wellness brands implement digital solutions, overcome challenges, and achieve measurable growth.</p>
 
-            <div class="isotope-inner" data-aos="fade-up" data-aos-delay="400">
-                <div class="filter-buttons" data-aos="zoom-in" data-aos-delay="450">
+            <div class="isotope-inner">
+                <div class="filter-buttons">
                     <button class="filter-btn active" data-filter="*">All</button>
-                    <button class="filter-btn" data-filter=".web">Web</button>
-                    <button class="filter-btn" data-filter=".mobile">Mobile</button>
-                    <button class="filter-btn" data-filter=".cloud">Cloud</button>
-                    <button class="filter-btn" data-filter=".uiux">UI/UX</button>
+                    <button class="filter-btn" data-filter=".ecommerceappredo">E-commerce App Redesign</button>
+                    <button class="filter-btn" data-filter=".saasplatform">SaaS Platform Optimization</button>
+                    <button class="filter-btn" data-filter=".mobileapp">Mobile App Branding</button>
                 </div>
 
                 <div class="grid">
-                    <div class="grid-item web" data-case="case1" data-aos="zoom-in" data-aos-delay="0">
+                    <div class="grid-item ecommerceappredo" data-case="case1" data-aos="zoom-in" data-aos-delay="0">
                         <img src="images/case-studies-1.jpg" alt="">
                     </div>
-                    <div class="grid-item web" data-case="case2" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="grid-item saasplatform" data-case="case2" data-aos="zoom-in" data-aos-delay="100">
                         <img src="images/case-studies-2.jpg" alt="">
                     </div>
-                    <div class="grid-item mobile" data-case="case3" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="grid-item mobileapp" data-case="case3" data-aos="zoom-in" data-aos-delay="200">
                         <img src="images/case-studies-3.jpg" alt="">
                     </div>
-                    <div class="grid-item mobile" data-case="case4" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="grid-item ecommerceappredo" data-case="case4" data-aos="zoom-in" data-aos-delay="300">
                         <img src="images/case-studies-4.jpg" alt="">
                     </div>
-                    <div class="grid-item cloud" data-case="case5" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="grid-item saasplatform" data-case="case5" data-aos="zoom-in" data-aos-delay="400">
                         <img src="images/case-studies-5.jpg" alt="">
                     </div>
-                    <div class="grid-item uiux" data-case="case6" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="grid-item ecommerceappredo" data-case="case6" data-aos="zoom-in" data-aos-delay="500">
                         <img src="images/case-studies-6.jpg" alt="">
                     </div>
                 </div>
             </div>
         </div>
-        <div class="isotope-bottom" data-aos="fade-up" data-aos-delay="600">
+        <div class="isotope-bottom">
             <div class="row">
-                <div class="col-md-6" data-aos="fade-right" data-aos-delay="700">
+                <div class="col-md-6">
                     <div class="splide case-study-slider" aria-label="Case Study">
                         <div class="splide__track">
                             <ul class="splide__list">
@@ -714,14 +529,16 @@
                     </div>
                 </div>
             </div>
+            <div class="splide_custom_pagination"></div>
         </div>
     </div>
 </section>
 <!-- Hidden case text templates -->
 <div class="case-study-templates" style="display: none;">
     <div id="case1">
+        <span class="badge">E-commerce App Redesign</span>
         <h5>
-            Implemented advanced search, seamless checkout, AWS migration, and scalable solutions to enhance performance & UX.
+            A secure mobile wallet that drove 40% month-on-month growth for a Kolkata-based fintech startup.
         </h5>
         <p>
             Launched a mobile-first e-commerce platform that increased conversions by 22% through optimized checkout flows.
@@ -753,6 +570,7 @@
     </div>
 
     <div id="case2">
+        <span class="badge">SaaS Platform Optimization</span>
         <h5>Redesigned logistics operations for a B2B platform.</h5>
         <p>Reduced delivery time by 30% and boosted retention with real-time analytics.</p>
         <div class="case-study-stats">
@@ -771,6 +589,7 @@
     </div>
 
     <div id="case3">
+        <span class="badge">Mobile App Branding</span>
         <h5>Healthcare dashboard redesign with React + AWS.</h5>
         <p>Improved reporting speed and clinical efficiency through intuitive UI and cloud scalability.</p>
         <div class="case-study-stats">
@@ -789,6 +608,7 @@
     </div>
 
     <div id="case4">
+        <span class="badge">E-commerce App Redesign</span>
         <h5>Healthcare dashboard redesign with React + AWS.</h5>
         <p>Improved reporting speed and clinical efficiency through intuitive UI and cloud scalability.</p>
         <div class="case-study-stats">
@@ -807,6 +627,7 @@
     </div>
 
     <div id="case5">
+        <span class="badge">SaaS Platform Optimization</span>
         <h5>Healthcare dashboard redesign with React + AWS.</h5>
         <p>Improved reporting speed and clinical efficiency through intuitive UI and cloud scalability.</p>
         <div class="case-study-stats">
@@ -825,6 +646,7 @@
     </div>
 
     <div id="case6">
+        <span class="badge">E-commerce App Redesign</span>
         <h5>Healthcare dashboard redesign with React + AWS.</h5>
         <p>Improved reporting speed and clinical efficiency through intuitive UI and cloud scalability.</p>
         <div class="case-study-stats">
@@ -843,212 +665,267 @@
     </div>
 </div>
 
-<section class="approach" data-aos="fade-up" data-aos-duration="800">
+<section class="splide logo-slider haspadding" aria-label="Trusted Companies">
     <div class="container">
-        <div class="approach-video-container">
-
-            <div class="approach-video" data-aos="fade-in" data-aos-delay="100">
-                <video autoplay muted loop playsinline>
-                    <source src="videos/apporach_video.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-
-            <div class="approach-text" data-aos="fade-up" data-aos-delay="200">
-                <div class="subheading" data-aos="fade-down" data-aos-delay="300">
-                    <h6>The Fortmindz Approach</h6>
-                    <div class="sq sq1"></div>
-                    <div class="sq sq2"></div>
-                    <div class="sq sq3"></div>
-                    <div class="sq sq4"></div>
+        <div class="mxw810">
+            <h2>Trusted UI/UX Design Partner of Leading Companies</h2>
+            <p>From startups to enterprises, top companies choose Fortmindz for seamless integration and dependable API development services that drive digital transformation.</p>
+        </div>
+    </div>
+    <div class="splide__track">
+        <ul class="splide__list">
+            <li class="splide__slide">
+                <div class="splide__slide__container">
+                    <img src="images/trusted-companies-1.png" alt="">
                 </div>
-
-                <h2 class="heading" data-aos="fade-up" data-aos-delay="400">
-                    Ready to build your next digital success story?
-                </h2>
-
-                <a href="#!" class="btn has-icon inverse" data-aos="zoom-in" data-aos-delay="500">
-                    Request a call back
-                    <span><img src="images/arrow-long-right.png" alt=""></span>
-                </a>
-            </div>
-
-            <div class="approach-img" data-aos="zoom-in" data-aos-delay="600">
-                <div class="circle-1" data-aos="zoom-in" data-aos-delay="700">
-                    <div class="icon dev" data-aos="fade-up" data-aos-delay="800">
-                        <img src="images/dev-circle-icon.png" alt="">
-                        <img src="images/dev-cursor.png" alt="" class="circle-cursor">
-                    </div>
-                    <div class="icon design" data-aos="fade-up" data-aos-delay="900">
-                        <img src="images/design-circle-icon.png" alt="">
-                        <img src="images/design-cursor.png" alt="" class="circle-cursor">
-                    </div>
-                    <div class="icon engine" data-aos="fade-up" data-aos-delay="1000">
-                        <img src="images/engineering-circle-icon.png" alt="">
-                        <img src="images/engine-cursor.png" alt="" class="circle-cursor">
-                    </div>
+            </li>
+            <li class="splide__slide">
+                <div class="splide__slide__container">
+                    <img src="images/trusted-companies-2.png" alt="">
                 </div>
+            </li>
+            <li class="splide__slide">
+                <div class="splide__slide__container">
+                    <img src="images/trusted-companies-3.png" alt="">
+                </div>
+            </li>
+            <li class="splide__slide">
+                <div class="splide__slide__container">
+                    <img src="images/trusted-companies-4.png" alt="">
+                </div>
+            </li>
+            <li class="splide__slide">
+                <div class="splide__slide__container">
+                    <img src="images/trusted-companies-5.png" alt="">
+                </div>
+            </li>
+            <li class="splide__slide">
+                <div class="splide__slide__container">
+                    <img src="images/trusted-companies-1.png" alt="">
+                </div>
+            </li>
+            <li class="splide__slide">
+                <div class="splide__slide__container">
+                    <img src="images/trusted-companies-2.png" alt="">
+                </div>
+            </li>
+            <li class="splide__slide">
+                <div class="splide__slide__container">
+                    <img src="images/trusted-companies-3.png" alt="">
+                </div>
+            </li>
+            <li class="splide__slide">
+                <div class="splide__slide__container">
+                    <img src="images/trusted-companies-4.png" alt="">
+                </div>
+            </li>
+            <li class="splide__slide">
+                <div class="splide__slide__container">
+                    <img src="images/trusted-companies-5.png" alt="">
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>
 
-                <div class="circle-2" data-aos="zoom-in" data-aos-delay="1100"></div>
+<section class="our-services uiuxprocess">
+    <div class="container">
+        <div class="subheading">
+            <h6>UI/UX Design process</h6>
+            <div class="sq sq1"></div>
+            <div class="sq sq2"></div>
+            <div class="sq sq3"></div>
+            <div class="sq sq4"></div>
+        </div>
+        <h2>Our UI/UX Design Workflow</h2>
+        <p>From strategy and design to development, testing, and launch, we follow a transparent process to deliver
+            apps on time and within budget.</p>
 
-                <div class="fmlogocontiner" data-aos="fade-up" data-aos-delay="1200">
-                    <img src="images/fm-white-svg.svg" alt="" class="fm-logo-circle">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="serv-left">
+                    <h4>Steps</h4>
+                    <ul>
+                        <li class="active">
+                            Discovery
+                        </li>
+                        <li>
+                            Research
+                        </li>
+                        <li>
+                            Wireframing
+                        </li>
+                        <li>
+                            Prototyping
+                        </li>
+                        <li>Testing</li>
+
+                        <li>Delivery</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="serv-scroll-slide">
+                    <div class="slide-inner">
+                        <h4>Discovery & Planning</h4>
+                        <p>The discovery phase sets the foundation for a successful design process. We collaborate closely with clients to understand their vision, target audience, and project goals. This stage helps align business objectives with user needs, ensuring every design decision is purposeful and data-driven.</p>
+                        <a href="#!" class="btn btn-white">Learn More</a>
+                        <div class="slide-row">
+                            <div class="slidebx">
+                                <div class="icon">
+                                    <img src="images/discovery-1.png" alt="">
+                                </div>
+                                <h5>Requirement Analysis</h5>
+                                <p>We begin by gathering insights about your business, users, and competitors. This helps us identify core functionalities, technical needs, and design priorities to guide the project effectively.</p>
+                            </div>
+
+                            <div class="slidebx">
+                                <div class="icon">
+                                    <img src="images/discovery-2.png" alt="">
+                                </div>
+                                <h5>User Research & Persona Building</h5>
+                                <p>Through research, surveys, and interviews, we define user personas to understand motivations, behaviors, and pain points—ensuring the final design resonates with real users.</p>
+                            </div>
+
+                            <div class="slidebx">
+                                <div class="icon">
+                                    <img src="images/discovery-3.png" alt="">
+                                </div>
+                                <h5>Information Architecture Planning</h5>
+                                <p>We organize content and features into a logical structure, creating sitemaps and flow diagrams that enhance navigation and user experience from the very beginning.</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="slide-inner">
+                        <h4>Research & Analysis</h4>
+                        <p>In this stage, we dive deep into understanding user behavior, market trends, and competitor strategies. Our goal is to uncover insights that shape design direction, ensuring your product is user-focused, relevant, and competitive. In this stage, we dive deep into understanding user behavior, market trends, and competitor strategies. Our goal is to uncover insights that shape design direction, ensuring your product is user-focused, relevant, and competitive. This data-driven approach helps us make informed design decisions that align with both user expectations and business goals.</p>
+                    </div>
+
+                    <div class="slide-inner">
+                        <h4>Research & Analysis</h4>
+                        <p>In this stage, we dive deep into understanding user behavior, market trends, and competitor strategies. Our goal is to uncover insights that shape design direction, ensuring your product is user-focused, relevant, and competitive. In this stage, we dive deep into understanding user behavior, market trends, and competitor strategies. Our goal is to uncover insights that shape design direction, ensuring your product is user-focused, relevant, and competitive. This data-driven approach helps us make informed design decisions that align with both user expectations and business goals.</p>
+                    </div>
+
+                    <div class="slide-inner">
+                        <h4>Research & Analysis</h4>
+                        <p>In this stage, we dive deep into understanding user behavior, market trends, and competitor strategies. Our goal is to uncover insights that shape design direction, ensuring your product is user-focused, relevant, and competitive. In this stage, we dive deep into understanding user behavior, market trends, and competitor strategies. Our goal is to uncover insights that shape design direction, ensuring your product is user-focused, relevant, and competitive. This data-driven approach helps us make informed design decisions that align with both user expectations and business goals.</p>
+                    </div>
+
+                    <div class="slide-inner">
+                        <h4>Research & Analysis</h4>
+                        <p>In this stage, we dive deep into understanding user behavior, market trends, and competitor strategies. Our goal is to uncover insights that shape design direction, ensuring your product is user-focused, relevant, and competitive. In this stage, we dive deep into understanding user behavior, market trends, and competitor strategies. Our goal is to uncover insights that shape design direction, ensuring your product is user-focused, relevant, and competitive. This data-driven approach helps us make informed design decisions that align with both user expectations and business goals.</p>
+                    </div>
+
+                    <div class="slide-inner">
+                        <h4>Research & Analysis</h4>
+                        <p>In this stage, we dive deep into understanding user behavior, market trends, and competitor strategies. Our goal is to uncover insights that shape design direction, ensuring your product is user-focused, relevant, and competitive. In this stage, we dive deep into understanding user behavior, market trends, and competitor strategies. Our goal is to uncover insights that shape design direction, ensuring your product is user-focused, relevant, and competitive. This data-driven approach helps us make informed design decisions that align with both user expectations and business goals.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-
-<section class="tech-stack" data-aos="fade-up" data-aos-duration="800">
+<section class="insights otherinsights checkbtn">
     <div class="container">
-
-        <div class="subheading" data-aos="fade-down" data-aos-delay="100">
-            <h6>Our Technology Stack</h6>
+        <div class="subheading">
+            <h6>Insights & Resources</h6>
             <div class="sq sq1"></div>
             <div class="sq sq2"></div>
             <div class="sq sq3"></div>
             <div class="sq sq4"></div>
         </div>
 
-        <h2 data-aos="fade-up" data-aos-delay="200">
-            Powered by <span>trusted frameworks</span> and <span>tools.</span>
+        <h2>
+            Mobile App Insights & Resources by Fortmindz
         </h2>
 
-        <div class="animated-tabs" data-aos="fade-up" data-aos-delay="300">
+        <div class="blog-sec">
             <div class="row">
-                <!-- Tabs -->
-                <div class="col-md-3 has-border" data-aos="fade-right" data-aos-delay="400">
-                    <div class="tab-buttons">
-                        <button class="tab-btn active" data-tab="frontend">Frontend</button>
-                        <button class="tab-btn" data-tab="backend">Backend</button>
-                        <button class="tab-btn" data-tab="mobile">Mobile</button>
-                        <button class="tab-btn" data-tab="database">Database</button>
-                        <button class="tab-btn" data-tab="cms">CMS</button>
-                        <button class="tab-btn" data-tab="ecommerce">E-commerce</button>
-                        <button class="tab-btn" data-tab="nocode">No-Code</button>
-                        <button class="tab-btn" data-tab="cloud">Cloud Engineering</button>
+                <div class="col-md-4">
+                    <div class="blog-post-bx">
+                        <div class="blgimg">
+                            <img src="images/uiux-insights-1.jpg" alt="">
+                        </div>
+                        <div class="blgcontent">
+                            <div class="blg-tags">
+                                <ul>
+                                    <li>#AI/ML</li>
+                                    <li>#User Experience</li>
+                                    <li>#Cloud Migration</li>
+                                </ul>
+                            </div>
+                            <h5>Mobile App Design Trends in 2025</h5>
+                            <p>Explore practical tips and strategies to improve your user experience and design workflow.</p>
+                        </div>
+                        <a href="#!" class="abs"></a>
                     </div>
                 </div>
 
-                <!-- Tab Content -->
-                <div class="col-md-9" data-aos="fade-left" data-aos-delay="500">
-                    <div class="tab-content-wrapper">
-
-                        <div class="tab-pane active" data-tab-content="frontend">
-                            <div class="tech-grid">
-                                <div class="tech-box" data-aos="zoom-in" data-aos-delay="100"><img src="images/react-bx.png" alt="">
-                                    <h6>React Js</h6>
-                                </div>
-                                <div class="tech-box" data-aos="zoom-in" data-aos-delay="200"><img src="images/css-bx.png" alt="">
-                                    <h6>CSS3</h6>
-                                </div>
-                                <div class="tech-box" data-aos="zoom-in" data-aos-delay="300"><img src="images/html-bx.png" alt="">
-                                    <h6>HTML5</h6>
-                                </div>
-                                <div class="tech-box" data-aos="zoom-in" data-aos-delay="400"><img src="images/angular-bx.png" alt="">
-                                    <h6>Angular JS</h6>
-                                </div>
-                                <div class="tech-box" data-aos="zoom-in" data-aos-delay="500"><img src="images/javascript-bx.png" alt="">
-                                    <h6>Javascript</h6>
-                                </div>
-                                <div class="tech-box" data-aos="zoom-in" data-aos-delay="600"><img src="images/typescript-bx.png" alt="">
-                                    <h6>TypeScript</h6>
-                                </div>
-                                <div class="tech-box" data-aos="zoom-in" data-aos-delay="700"><img src="images/vue-bx.png" alt="">
-                                    <h6>VUE</h6>
-                                </div>
-                            </div>
+                <div class="col-md-4 mb-hide">
+                    <div class="blog-post-bx">
+                        <div class="blgimg">
+                            <img src="images/uiux-insights-2.jpg" alt="">
                         </div>
-
-                        <div class="tab-pane" data-tab-content="backend">
-                            <div class="tech-grid">
-                                <div class="tech-box" data-aos="fade-up" data-aos-delay="100">
-                                    <h6>Node.js</h6>
-                                </div>
-                                <div class="tech-box" data-aos="fade-up" data-aos-delay="200">
-                                    <h6>Python</h6>
-                                </div>
-                                <div class="tech-box" data-aos="fade-up" data-aos-delay="300">
-                                    <h6>Java</h6>
-                                </div>
-                                <div class="tech-box" data-aos="fade-up" data-aos-delay="400">
-                                    <h6>Go</h6>
-                                </div>
+                        <div class="blgcontent">
+                            <div class="blg-tags">
+                                <ul>
+                                    <li>#AI/ML</li>
+                                    <li>#User Experience</li>
+                                    <li>#Cloud Migration</li>
+                                </ul>
                             </div>
+                            <h5>MVP Checklist for Startups</h5>
+                            <p>Guidelines to enhance usability and user satisfaction.</p>
                         </div>
+                        <a href="#!" class="abs"></a>
+                    </div>
+                </div>
 
-                        <!-- Empty Tabs -->
-                        <div class="tab-pane" data-tab-content="mobile">
-                            <div class="tech-grid" data-aos="fade-up" data-aos-delay="200">
-                                <div class="no-content">
-                                    <p>No Content Found</p>
-                                </div>
+                <div class="col-md-4 mb-hide">
+                    <div class="blog-post-bx">
+                        <div class="blgimg">
+                            <img src="images/uiux-insights-3.jpg" alt="">
+                        </div>
+                        <div class="blgcontent">
+                            <div class="blg-tags">
+                                <ul>
+                                    <li>#AI/ML</li>
+                                    <li>#User Experience</li>
+                                    <li>#Cloud Migration</li>
+                                </ul>
                             </div>
+                            <h5>App Store Optimization Best Practices</h5>
+                            <p>Step-by-step guide to create a consistent design system.</p>
                         </div>
-
-                        <div class="tab-pane" data-tab-content="database">
-                            <div class="tech-grid" data-aos="fade-up" data-aos-delay="200">
-                                <div class="no-content">
-                                    <p>No Content Found</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="tab-pane" data-tab-content="cms">
-                            <div class="tech-grid" data-aos="fade-up" data-aos-delay="200">
-                                <div class="no-content">
-                                    <p>No Content Found</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="tab-pane" data-tab-content="ecommerce">
-                            <div class="tech-grid" data-aos="fade-up" data-aos-delay="200">
-                                <div class="no-content">
-                                    <p>No Content Found</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="tab-pane" data-tab-content="nocode">
-                            <div class="tech-grid" data-aos="fade-up" data-aos-delay="200">
-                                <div class="no-content">
-                                    <p>No Content Found</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="tab-pane" data-tab-content="cloud">
-                            <div class="tech-grid" data-aos="fade-up" data-aos-delay="200">
-                                <div class="no-content">
-                                    <p>No Content Found</p>
-                                </div>
-                            </div>
-                        </div>
-
+                        <a href="#!" class="abs"></a>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="absbtn">
+            <a href="#!" class="btn has-icon">Explore More
+                <span><img src="images/arrow-long-right.png" alt=""></span>
+            </a>
+        </div>
     </div>
 </section>
 
-
-<section class="industry client-say"
-    style="background: #fff url(images/banner-grid.png) repeat-y 0 0; background-size: contain;"
-    data-aos="fade-up" data-aos-duration="800">
+<section class="industry client-say mt-custom"
+    style="background: #fff url(images/banner-grid.png) repeat-y 0 0; background-size: contain;">
     <div class="container">
 
         <!-- Subheading -->
-        <div class="subheading" data-aos="fade-down" data-aos-delay="100">
+        <div class="subheading">
             <h6>What Our Clients Say</h6>
             <div class="sq sq1"></div>
             <div class="sq sq2"></div>
             <div class="sq sq3"></div>
             <div class="sq sq4"></div>
         </div>
-        <h2 data-aos="fade-up" data-aos-delay="200">Trusted worldwide for scalable
+        <h2>Trusted worldwide for scalable
             <span>digital solutions.</span>
         </h2>
 
@@ -1455,312 +1332,68 @@
     </div>
 </section>
 
-<section class="insights" data-aos="fade-up" data-aos-duration="1000">
+<section class="why-choose">
     <div class="container">
-        <div class="subheading" data-aos="fade-up" data-aos-delay="100">
-            <h6>Insights & Resources</h6>
+        <!-- Subheading -->
+        <div class="subheading">
+            <h6>Why Choose</h6>
             <div class="sq sq1"></div>
             <div class="sq sq2"></div>
             <div class="sq sq3"></div>
             <div class="sq sq4"></div>
         </div>
-
-        <h2 data-aos="fade-up" data-aos-delay="200">
-            Insights on <span>trends, tips, and success stories.</span>
-        </h2>
-
-        <div class="absbtn" data-aos="zoom-in" data-aos-delay="600">
-            <a href="#!" class="btn has-icon">Explore More
-                <span><img src="images/arrow-long-right.png" alt=""></span>
-            </a>
-        </div>
-
-        <div class="blog-sec">
-            <div class="row">
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="blog-post-bx">
-                        <div class="blgimg">
-                            <img src="images/insights-1.jpg" alt="">
-                        </div>
-                        <div class="blgcontent">
-                            <div class="blg-tags">
-                                <ul>
-                                    <li>#AI/ML</li>
-                                    <li>#User Experience</li>
-                                    <li>#Cloud Migration</li>
-                                </ul>
-                            </div>
-                            <h5>How AI is Transforming User Experience in 2025</h5>
-                            <p>Discover how AI-driven design is reshaping digital products worldwide.</p>
-                        </div>
-                        <a href="#!" class="abs"></a>
-                    </div>
-                </div>
-
-                <div class="col-md-4 mb-hide" data-aos="fade-up" data-aos-delay="400">
-                    <div class="blog-post-bx">
-                        <div class="blgimg">
-                            <img src="images/insights-2.jpg" alt="">
-                        </div>
-                        <div class="blgcontent">
-                            <div class="blg-tags">
-                                <ul>
-                                    <li>#AI/ML</li>
-                                    <li>#User Experience</li>
-                                    <li>#Cloud Migration</li>
-                                </ul>
-                            </div>
-                            <h5>Top 7 Cloud Migration Challenges & Solutions</h5>
-                            <p>Discover how AI-driven design is reshaping digital products worldwide.</p>
-                        </div>
-                        <a href="#!" class="abs"></a>
-                    </div>
-                </div>
-
-                <div class="col-md-4 mb-hide" data-aos="fade-up" data-aos-delay="500">
-                    <div class="blog-post-bx">
-                        <div class="blgimg">
-                            <img src="images/insights-3.jpg" alt="">
-                        </div>
-                        <div class="blgcontent">
-                            <div class="blg-tags">
-                                <ul>
-                                    <li>#AI/ML</li>
-                                    <li>#User Experience</li>
-                                    <li>#Cloud Migration</li>
-                                </ul>
-                            </div>
-                            <h5>Design Thinking for Scalable Digital Products</h5>
-                            <p>Discover how AI-driven design is reshaping digital products worldwide.</p>
-                        </div>
-                        <a href="#!" class="abs"></a>
-                    </div>
+        <h2>Why Choose Fortmindz for UI/UX Services</h2>
+        <div class="row">
+            <div class="col-md-5">
+                <div class="imgsec">
+                    <img src="images/why-choose-img.jpg" alt="">
                 </div>
             </div>
-        </div>
+            <div class="col-md-7">
+                <div class="textsec">
+                    <ul class="compare-list" role="table" aria-label="Feature comparison table">
+                        <li class="compare-row" role="row">
+                            <div class="compare-cell compare-cell-header" role="columnheader">Feature</div>
+                            <div class="compare-cell compare-cell-header" role="columnheader">Our Design</div>
+                            <div class="compare-cell compare-cell-header" role="columnheader">Traditional Approach</div>
+                        </li>
 
+                        <li class="compare-row" role="row">
+                            <div class="compare-cell " role="cell">User Engagement</div>
+                            <div class="compare-cell" role="cell">Intuitive &amp; Interactive</div>
+                            <div class="compare-cell" role="cell">Basic &amp; Static</div>
+                        </li>
 
-    </div>
-</section>
+                        <li class="compare-row" role="row">
+                            <div class="compare-cell" role="cell">Consistency</div>
+                            <div class="compare-cell" role="cell"><strong>Design System Applied</strong></div>
+                            <div class="compare-cell" role="cell">No Unified System</div>
+                        </li>
 
-<section class="excellence" data-aos="fade-up" data-aos-duration="1000">
-    <div class="container">
-        <div class="subheading" data-aos="fade-up" data-aos-delay="100">
-            <h6>Recognized for Excellence</h6>
-            <div class="sq sq1"></div>
-            <div class="sq sq2"></div>
-            <div class="sq sq3"></div>
-            <div class="sq sq4"></div>
-        </div>
+                        <li class="compare-row" role="row">
+                            <div class="compare-cell" role="cell">Adoption Speed</div>
+                            <div class="compare-cell" role="cell">Fast &amp; Intuitive</div>
+                            <div class="compare-cell" role="cell">Slower Learning Curve</div>
+                        </li>
 
-        <h2 data-aos="fade-up" data-aos-delay="200">
-            Awarded for innovation, <span>trusted for quality.</span>
-        </h2>
-
-        <div class="excellence-row">
-            <div class="row">
-                <div class="col-md-3" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="excellence-bx">
-                        <div class="icon">
-                            <img src="images/excellence-1.png" alt="">
-                        </div>
-                        <div class="text">
-                            <h6>Clutch Leader Award 2024</h6>
-                            <p>Top B2B Software Development Company</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-3" data-aos="zoom-in" data-aos-delay="400">
-                    <div class="excellence-bx">
-                        <div class="icon">
-                            <img src="images/excellence-2.png" alt="">
-                        </div>
-                        <div class="text">
-                            <h6>GoodFirms Recognition 2023</h6>
-                            <p>Leading Mobile App Development Company</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-3" data-aos="zoom-in" data-aos-delay="500">
-                    <div class="excellence-bx">
-                        <div class="icon">
-                            <img src="images/excellence-3.png" alt="">
-                        </div>
-                        <div class="text">
-                            <h6>ISO Certification 2022</h6>
-                            <p>ISO 9001:2015 Certified for Quality Management</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-3" data-aos="zoom-in" data-aos-delay="600">
-                    <div class="excellence-bx">
-                        <div class="icon">
-                            <img src="images/excellence-4.png" alt="">
-                        </div>
-                        <div class="text">
-                            <h6>Tech Innovators Award 2023</h6>
-                            <p>Best Emerging IT Services <br>Provider</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="excellence-img" data-aos="fade-left" data-aos-delay="700">
-        <img src="images/innovation-big.jpg" alt="">
-    </div>
-</section>
-
-<section class="lets-connect">
-    <div class="container">
-        <div class="connect-row">
-
-            <!-- Left: Contact Form -->
-            <div class="connect-form" data-aos="fade-right" data-aos-delay="100">
-                <div class="cn-top">
-                    <h4>Let's Connect</h4>
-                    <form action="">
-                        <div class="forminner">
-                            <div class="inputrow">
-                                <div class="full">
-                                    <label>Name</label>
-                                    <input type="text" placeholder="Your Name">
-                                </div>
-                            </div>
-
-                            <div class="inputrow">
-                                <div class="half">
-                                    <label>Email</label>
-                                    <input type="email" placeholder="Your Email">
-                                </div>
-                                <div class="half">
-                                    <label>Mobile Number</label>
-                                    <input type="tel" placeholder="34567 76543" id="phone">
-                                </div>
-                            </div>
-
-                            <div class="inputrow">
-                                <div class="half">
-                                    <label>Company</label>
-                                    <input type="text" placeholder="Your Company">
-                                </div>
-                                <div class="half">
-                                    <label>Required Service</label>
-                                    <select>
-                                        <option selected disabled>Select Service</option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="inputrow">
-                                <div class="full">
-                                    <div class="fileupload">
-                                        <label>Attachments</label>
-                                        <div class="fileupload-box">
-                                            <input type="file" id="attachment" />
-                                            <div class="fileupload-placeholder">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none">
-                                                    <path d="M16.6636 7.35166C15.7393 3.66932 12.0049 1.43355 8.32253 2.3579C5.44488 3.08029 3.35538 5.5674 3.14009 8.52649C1.09684 8.86344 -0.286409 10.793 0.0505465 12.8362C0.350084 14.6527 1.92405 15.983 3.76502 15.9757H6.88968V14.7258H3.76502C2.38447 14.7258 1.2653 13.6066 1.2653 12.2261C1.2653 10.8455 2.38447 9.72636 3.76502 9.72636C4.11018 9.72636 4.38995 9.44658 4.38995 9.10142C4.38683 5.99516 6.90245 3.4745 10.0087 3.47142C12.6976 3.46872 15.0123 5.36968 15.5325 8.00779C15.5838 8.2712 15.7976 8.47243 16.0637 8.50774C17.7722 8.75103 18.9599 10.3332 18.7166 12.0417C18.4982 13.5758 17.1883 14.7181 15.6387 14.7258H13.139V15.9757H15.6387C18.0547 15.9684 20.0073 14.0039 20 11.5879C19.9939 9.5768 18.6173 7.82891 16.6636 7.35166Z" fill="white" />
-                                                    <path d="M9.57004 9.90732L7.07031 12.4071L7.95147 13.2882L9.38881 11.8571V17.8502H10.6387V11.8571L12.0698 13.2882L12.9509 12.4071L10.4512 9.90732C10.2074 9.66501 9.8138 9.66501 9.57004 9.90732Z" fill="white" />
-                                                </svg>
-                                                <span class="file-text">Browse Files</span>
-                                            </div>
-                                        </div>
-                                        <p class="file-name" id="file-name">No file chosen</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="inputrow">
-                                <div class="full">
-                                    <label>Requirements</label>
-                                    <textarea placeholder="Say about your requirements"></textarea>
-                                </div>
-                            </div>
-
-                            <div class="inputrow prv-text">
-                                <p>Fortmindz needs the contact information you provide to us to contact you about our products and services. By submitting the form you agree to Fortmindz <a href="#!">Privacy Policy</a> and <a href="#!">Cookies</a> & Internet Advertising.</p>
-                            </div>
-
-                            <div class="inputrow submit">
-                                <input type="submit" value="Get in Touch" class="btn">
-                            </div>
-                        </div>
-                    </form>
-                </div>
-
-                <div class="cn-bot" data-aos="fade-up" data-aos-delay="600">
-                    <ul>
-                        <li><img src="images/tick-green-circle.png" alt=""> 100% Confidential</li>
-                        <li><img src="images/tick-green-circle.png" alt=""> We Sign NDA</li>
+                        <li class="compare-row" role="row">
+                            <div class="compare-cell" role="cell">Conversion Rates</div>
+                            <div class="compare-cell" role="cell">Optimized for Growth</div>
+                            <div class="compare-cell" role="cell">Limited Focus</div>
+                        </li>
                     </ul>
+
+                    <a href="#!" class="btn has-icon">Explore More <span><img src="images/arrow-long-right.png" alt=""></span></a>
+
                 </div>
             </div>
-
-            <!-- Right: Text Content -->
-            <div class="connect-text" data-aos="fade-left" data-aos-delay="300">
-                <div class="mxw514">
-                    <div class="subheading" data-aos="fade-up" data-aos-delay="400">
-                        <h6>Contact Us</h6>
-                        <div class="sq sq1"></div>
-                        <div class="sq sq2"></div>
-                        <div class="sq sq3"></div>
-                        <div class="sq sq4"></div>
-                    </div>
-                    <h2 data-aos="fade-up" data-aos-delay="500">
-                        We'd love to hear <span>from you!</span>
-                    </h2>
-                    <p class="mb-hide" data-aos="fade-up" data-aos-delay="600">
-                        We are a team of passionate developers, analysts, and designers with a vision to transform your business — trusted by top companies for our innovative and reliable digital solutions.
-                    </p>
-                </div>
-
-                <ul class="mb-hide" data-aos="fade-up" data-aos-delay="700">
-                    <li>Excellent <strong>Communication</strong></li>
-                    <li>Unbeatable <strong>Quality</strong></li>
-                    <li><strong>Scalable</strong> On-Demand</li>
-                    <li>100% <strong>Transparency</strong></li>
-                    <li>Collaborate <strong>Seamlessly</strong></li>
-                    <li>Risk & Obligation <strong>-Free</strong></li>
-                </ul>
-
-                <div class="cn-logo-sec mb-hide">
-                    <div class="cnlogo" data-aos="zoom-in" data-aos-delay="800">
-                        <img src="images/cn-logo-1.png" alt="">
-                    </div>
-                    <div class="cnlogo" data-aos="zoom-in" data-aos-delay="850">
-                        <img src="images/cn-logo-2.png" alt="">
-                    </div>
-                    <div class="cnlogo" data-aos="zoom-in" data-aos-delay="900">
-                        <img src="images/cn-logo-3.png" alt="">
-                    </div>
-                    <div class="cnlogo" data-aos="zoom-in" data-aos-delay="950">
-                        <img src="images/cn-logo-4.png" alt="">
-                    </div>
-                    <div class="cnlogo" data-aos="zoom-in" data-aos-delay="1000">
-                        <img src="images/cn-logo-5.png" alt="">
-                    </div>
-                    <div class="cnlogo" data-aos="zoom-in" data-aos-delay="1050">
-                        <img src="images/cn-logo-6.png" alt="">
-                    </div>
-                </div>
-            </div>
-
         </div>
     </div>
 </section>
 
-
-<section class="faq" data-aos="fade-up" data-aos-duration="1000">
+<section class="faq">
     <div class="container">
-        <div class="subheading" data-aos="fade-up" data-aos-delay="100">
+        <div class="subheading">
             <h6>FAQs</h6>
             <div class="sq sq1"></div>
             <div class="sq sq2"></div>
@@ -1768,13 +1401,13 @@
             <div class="sq sq4"></div>
         </div>
 
-        <h2 data-aos="fade-up" data-aos-delay="200">Frequently Asked Questions</h2>
+        <h2>Frequently Asked Questions</h2>
 
         <div class="faq-outer">
-            <div class="faq-main" data-aos="fade-up" data-aos-delay="300">
+            <div class="faq-main">
                 <div class="faq-head">
                     <span class="toggleicon"></span>
-                    <h6>What services does Fortmindz offer?</h6>
+                    <h6>How long does a UI/UX project take?</h6>
                 </div>
                 <div class="faq-content">
                     <p>
@@ -1786,10 +1419,10 @@
                 </div>
             </div>
 
-            <div class="faq-main" data-aos="fade-up" data-aos-delay="400">
+            <div class="faq-main">
                 <div class="faq-head">
                     <span class="toggleicon"></span>
-                    <h6>How do you ensure the quality of your projects?</h6>
+                    <h6>Do you provide prototypes?</h6>
                 </div>
                 <div class="faq-content">
                     <p>
@@ -1799,10 +1432,10 @@
                 </div>
             </div>
 
-            <div class="faq-main" data-aos="fade-up" data-aos-delay="500">
+            <div class="faq-main">
                 <div class="faq-head">
                     <span class="toggleicon"></span>
-                    <h6>Which industries do you specialize in?</h6>
+                    <h6>Will my brand identity be consistent?</h6>
                 </div>
                 <div class="faq-content">
                     <p>
@@ -1812,10 +1445,23 @@
                 </div>
             </div>
 
-            <div class="faq-main" data-aos="fade-up" data-aos-delay="600">
+            <div class="faq-main">
                 <div class="faq-head">
                     <span class="toggleicon"></span>
-                    <h6>Do you provide end-to-end digital solutions?</h6>
+                    <h6>How much does UI/UX design cost?</h6>
+                </div>
+                <div class="faq-content">
+                    <p>
+                        We maintain quality through automated testing, peer reviews, and
+                        iterative feedback loops to ensure every release meets expectations.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-main">
+                <div class="faq-head">
+                    <span class="toggleicon"></span>
+                    <h6>Why hire a UI/UX company in Kolkata?</h6>
                 </div>
                 <div class="faq-content">
                     <p>
@@ -1825,8 +1471,28 @@
                 </div>
             </div>
         </div>
+        <div class="button-container">
+            <a href="#!" class="btn has-icon">Explore More <span><img src="images/arrow-long-right.png" alt=""></span></a>
+            <a href="#!" class="btn btn-black">Talk to Our Expert</a>
+        </div>
     </div>
 </section>
 
+<div class="explore">
+    <div class="container">
+        <div class="subheading">
+            <h6>Explore with us</h6>
+            <div class="sq sq1"></div>
+            <div class="sq sq2"></div>
+            <div class="sq sq3"></div>
+            <div class="sq sq4"></div>
+        </div>
+        <div class="mxw-779">
+            <h2>Ready to Build Your Mobile App?</h2>
+            <p>Partner with Fortmindz, a trusted mobile app development company in Kolkata, to turn your vision into a world-class app.</p>
+            <a href="#!" class="btn has-icon">Book a Free Consultation Today <span><img src="images/arrow-long-right.png" alt=""></span></a>
+        </div>
+    </div>
+</div>
 
 <?php include 'inc/footer.php'; ?>

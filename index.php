@@ -103,7 +103,6 @@
     </div>
 </section>
 
-
 <section data-aos="fade-up" data-aos-delay="100" class="splide logo-slider" aria-label="Trusted Companies">
     <div class="splide__track">
         <ul class="splide__list">
@@ -899,7 +898,6 @@
     </div>
 </section>
 
-
 <section class="tech-stack" data-aos="fade-up" data-aos-duration="800">
     <div class="container">
 
@@ -1033,7 +1031,6 @@
         </div>
     </div>
 </section>
-
 
 <section class="industry client-say"
     style="background: #fff url(images/banner-grid.png) repeat-y 0 0; background-size: contain;"
@@ -1757,7 +1754,6 @@
     </div>
 </section>
 
-
 <section class="faq" data-aos="fade-up" data-aos-duration="1000">
     <div class="container">
         <div class="subheading" data-aos="fade-up" data-aos-delay="100">
@@ -1827,6 +1823,5 @@
         </div>
     </div>
 </section>
-
 
 <?php include 'inc/footer.php'; ?>
