@@ -108,6 +108,13 @@ p {
   margin-bottom: 20px;
 }
 
+a {
+  transition: all 0.3s ease-in-out;
+}
+a:focus {
+  outline: none;
+}
+
 .btn {
   display: inline-flex;
   align-items: center;

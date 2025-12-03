@@ -136,6 +136,12 @@ p {
     line-height: 26px; /* 162.5% */
     margin-bottom: 20px;
 }
+a {
+    transition: all 0.3s ease-in-out;
+    &:focus {
+        outline: none;
+    }
+}
 //! ---------------
 //! Global BodyText
 

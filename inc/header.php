@@ -82,22 +82,15 @@
                                                 PRODUCT DEVELOPMENT & ENGINEERING
                                             </h6>
                                             <ul class="service-submenu">
-                                                <li class="has-submenu">
-                                                    <div class="menu-head">
-                                                        <a href="#">Product Design</a>
-                                                        <span class="icon">+</span>
-                                                    </div>
-                                                    <ul class="submenu">
-                                                        <li><a href="#">UI/UX</a></li>
-                                                        <li><a href="#">Mobile-First Design</a></li>
-                                                    </ul>
-                                                </li>
-
-                                                <li><a href="#">Application Development</a></li>
-                                                <li><a href="#">Software Development</a></li>
-                                                <li><a href="#">QA and Testing</a></li>
-                                                <li><a href="#">DevOps</a></li>
-                                                <li><a href="#">Product Management</a></li>
+                                                <!-- <li class="has-submenu">
+                                                    <a href="#">Product Design</a>
+                                                </li> -->
+                                                <li><a href="services-uiux.php">UiUX Development</a></li>
+                                                <li><a href="services-mobile-app-dev.php">Mobile App Development</a></li>
+                                                <li><a href="services-api-devlopment.php">Services API Development</a></li>
+                                                <li><a href="services-web-app-devlopment.php">Web Application Development</a></li>
+                                                <li><a href="services-e-commerce-devlopment.php">E-Commerce Development</a></li>
+                                                <li><a href="service-testing-qa.php">QA and Testing</a></li>
                                             </ul>
                                         </div>
 
