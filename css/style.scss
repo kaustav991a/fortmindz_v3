@@ -46,20 +46,20 @@ h1,
 .heading {
     color: $pitch-black;
     font-family: $poppins;
-    font-size: 56px;
+    font-size: clamp(2.5rem, 1.389vw + 1.833rem, 3.5rem);
     font-style: normal;
     font-weight: 600;
-    line-height: 80px; /* 142.857% */
+    line-height: clamp(3.438rem, 2.17vw + 2.396rem, 5rem); /* 142.857% */
 }
 
 h2 {
     color: $base-black;
     // text-align: center;
     font-family: $poppins;
-    font-size: 40px;
+    font-size: clamp(2rem, 0.694vw + 1.667rem, 2.5rem);
     font-style: normal;
     font-weight: 700;
-    line-height: 48px; /* 120% */
+    line-height: clamp(2.5rem, 0.694vw + 2.167rem, 3rem); /* 120% */
     text-transform: capitalize;
     span {
         color: $brand-primary;
@@ -144,6 +144,73 @@ a {
 }
 //! ---------------
 //! Global BodyText
+
+//! Global Inputs
+//! ---------------
+/* --- Global Input Reset and Default Styling --- */
+input:not([type="radio"]):not([type="checkbox"]),
+textarea,
+select {
+    /* 1. Box Model & Sizing */
+    box-sizing: border-box; /* Crucial for predictable sizing (padding doesn't increase width/height) */
+    width: 100%; /* Default to full width of container */
+    padding: 0.75rem 1rem; /* Consistent internal padding */
+    margin: 0 0 1rem 0; /* Consistent bottom spacing */
+
+    /* 2. Visuals */
+    border: 1px solid var(--color-border-default, #ccc); /* Light gray border for clarity */
+    border-radius: 4px; /* Subtle rounding */
+    background-color: var(--color-input-bg, #fff); /* White background */
+
+    /* 3. Typography */
+    font-family: inherit; /* Inherit the body font (Crucial for consistency) */
+    font-size: 1rem; /* Consistent, readable size */
+    line-height: 1.5; /* Good line height for text entry */
+    color: var(--color-text-default, #333);
+
+    /* 4. Performance & Behavior */
+    -webkit-appearance: none; /* iOS/Safari reset (removes internal styles) */
+    -moz-appearance: none; /* Firefox reset */
+    appearance: none; /* Standard property reset (removes default browser widgets) */
+}
+select {
+    select {
+        background: var(--neutral-100, #f7f8fa)
+            url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 6"><path d="M0 0l5 6 5-6z" fill="%23000"/></svg>')
+            no-repeat center right 26px;
+        background-size: 12px;
+    }
+}
+/* --- Focus and States (Accessibility/UX) --- */
+
+/* 5. Focus State: Highlighting where the user is */
+input:focus,
+textarea:focus,
+select:focus {
+    /* Use a clear, non-default outline for accessibility (WCAG AA) */
+    outline: 2px solid $brand-primary; /* Our blue brand color */
+    outline-offset: 1px;
+    border-color: transparent; /* Remove the original border when focused */
+}
+
+/* 6. Placeholder Text Styling */
+::placeholder {
+    color: var(--color-text-placeholder, #8f9398);
+    opacity: 0.7;
+    // opacity: 1; /* Fixes Firefox/Edge behavior where opacity is less than 1 */
+}
+
+/* 7. Disabled State */
+input:disabled,
+textarea:disabled,
+select:disabled {
+    cursor: not-allowed;
+    background-color: var(--color-input-disabled, #eee);
+    color: var(--color-text-disabled, #8f9398);
+    box-shadow: none;
+}
+//! ---------------
+//! Global Inputs
 
 //! Global Button
 //! ---------------
@@ -260,12 +327,6 @@ a {
 //! ---------------
 //! Global Button
 
-//! Global Inputs
-//! ---------------
-
-//! ---------------
-//! Global Inputs
-
 // CSS Starts
 header {
     position: fixed;
@@ -281,7 +342,7 @@ header {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 16px 40px;
+        padding: clamp(0.625rem, 0.521vw + 0.375rem, 1rem) clamp(1.125rem, 1.91vw + 0.208rem, 2.5rem);
         border-radius: 1000px;
         background: transparent;
         position: relative;
@@ -305,7 +366,7 @@ header {
         // }
 
         .logo {
-            max-width: 200px;
+            max-width: clamp(8.75rem, 5.208vw + 6.25rem, 12.5rem);
             width: 100%;
             img {
                 width: 100%;
@@ -350,7 +411,7 @@ header {
                 list-style: none;
                 display: flex;
                 align-items: center;
-                gap: 27px;
+                gap: clamp(0.938rem, 1.042vw + 0.438rem, 1.688rem);
 
                 li {
                     position: relative;
@@ -359,7 +420,7 @@ header {
                         position: relative;
                         color: $base-black;
                         font-family: $dmsans;
-                        font-size: 16px;
+                        font-size: clamp(0.875rem, 0.174vw + 0.792rem, 1rem);
                         font-style: normal;
                         font-weight: 500;
                         line-height: normal;
@@ -770,8 +831,8 @@ header {
 }
 
 .banner {
-    margin-top: 116px;
-    height: 648px;
+    margin-top: clamp(5.625rem, 2.257vw + 4.542rem, 7.25rem);
+    height: clamp(30rem, 14.583vw + 23rem, 40.5rem);
     position: relative;
     &:before {
         content: "";
@@ -1309,18 +1370,18 @@ header {
             }
         }
         .banner-right {
-            max-width: 359px;
+            max-width: clamp(18.125rem, 5.99vw + 15.25rem, 22.438rem);
             width: 100%;
             position: relative;
             .logoarea {
-                max-width: 278px;
+                max-width: clamp(14.875rem, 3.472vw + 13.208rem, 17.375rem);
                 width: 100%;
                 margin: 0 auto 61px;
                 ul {
                     display: flex;
                     align-items: flex-start;
                     align-content: flex-start;
-                    gap: 80px;
+                    gap: clamp(2.5rem, 3.472vw + 0.833rem, 5rem);
                     flex-wrap: wrap;
                     li {
                         display: flex;
@@ -1374,8 +1435,8 @@ header {
                         margin-bottom: 0; /* Space between avatars and text */
 
                         .avatar {
-                            width: 56px;
-                            height: 56px;
+                            width: clamp(2.875rem, 0.868vw + 2.458rem, 3.5rem);
+                            height: clamp(2.875rem, 0.868vw + 2.458rem, 3.5rem);
                             border-radius: 50%;
                             object-fit: cover;
                             border: 2px solid white; /* The white ring around each avatar */
@@ -1435,7 +1496,7 @@ header {
                         gap: 8px;
                         position: relative;
                         z-index: 4;
-                        max-width: 182px;
+                        max-width: clamp(10.263rem, 3.212vw + 7.521rem, 11.375rem);
                         width: 100%;
                         justify-content: center;
 
@@ -1444,8 +1505,8 @@ header {
                             gap: 8px;
                             .star {
                                 img {
-                                    width: 16.634px;
-                                    height: 15.912px;
+                                    width: clamp(0.75rem, 0.347vw + 0.583rem, 1rem);
+                                    height: clamp(0.75rem, 0.347vw + 0.583rem, 1rem);
                                 }
                             }
                         }
@@ -1466,7 +1527,7 @@ header {
                     color: $pitch-black;
                     text-align: center;
                     font-family: $dmsans;
-                    font-size: 19px;
+                    font-size: clamp(1rem, 0.26vw + 0.875rem, 1.188rem);
                     font-style: normal;
                     font-weight: 600;
                     line-height: 19px; /* 100% */
@@ -1484,6 +1545,10 @@ header {
                 .description {
                     line-height: 26px; /* 162.5% */
                 }
+            }
+            .banner-right {
+                max-width: 642px;
+                width: 100%;
             }
         }
         h1 {
@@ -1529,7 +1594,7 @@ header {
 }
 
 .ideas {
-    padding: 115px 0;
+    padding: clamp(3.75rem, 4.774vw + 1.458rem, 7.188rem) 0;
     text-align: center;
     .subheading {
         margin: 0 auto 20px;
@@ -1542,10 +1607,10 @@ header {
         margin: 0 auto;
     }
     p {
-        font-size: 32px;
+        font-size: clamp(1rem, 1.389vw + 0.333rem, 2rem);
         font-style: normal;
         font-weight: 400;
-        line-height: 44px; /* 137.5% */
+        line-height: clamp(1.75rem, 1.389vw + 1.083rem, 2.75rem); /* 137.5% */
         margin-bottom: 40px;
     }
     .stats {
@@ -1561,8 +1626,9 @@ header {
             flex-shrink: 0;
             padding-bottom: 38px;
             margin-top: -38px;
-            margin-left: -62px;
-            margin-right: -62px;
+            margin-left: calc(-1 * clamp(1.25rem, 3.646vw - 0.5rem, 3.875rem));
+            margin-right: calc(-1 * clamp(1.25rem, 3.646vw - 0.5rem, 3.875rem));
+
             li {
                 position: relative;
                 &:before {
@@ -1848,7 +1914,7 @@ header {
 }
 
 .industry {
-    padding: 104px 0 135px;
+    padding: clamp(3.75rem, 3.819vw + 1.917rem, 6.5rem) 0 clamp(3.75rem, 6.51vw + 0.625rem, 8.438rem);
     position: relative;
     text-align: center;
     color: rgba(244, 244, 244, 1);
@@ -2106,7 +2172,7 @@ header {
 }
 
 .case-studies {
-    padding: 84px 0 133px;
+    padding: clamp(3.75rem, 2.083vw + 2.75rem, 5.25rem) 0 clamp(3.75rem, 6.337vw + 0.708rem, 8.313rem);
     .isotope-outer {
         text-align: center;
         margin-bottom: 66px;
@@ -2130,7 +2196,7 @@ header {
         display: inline-flex;
         align-items: center;
         gap: 10px;
-        margin-bottom: 66px;
+        margin-bottom: clamp(1.875rem, 3.125vw + 0.375rem, 4.125rem);
 
         .filter-btn {
             display: flex;
@@ -2326,14 +2392,14 @@ header {
 }
 
 .approach {
-    padding-bottom: 112px;
+    padding-bottom: clamp(3.75rem, 4.514vw + 1.583rem, 7rem);
     .subheading {
         margin-bottom: 30px;
     }
     h2 {
         color: $white;
-        line-height: 64px; /* 114.286% */
-        margin-bottom: 60px;
+        line-height: clamp(3.438rem, 0.781vw + 3.063rem, 4rem); /* 114.286% */
+        margin-bottom: clamp(1.875rem, 2.604vw + 0.625rem, 3.75rem);
     }
     .approach-video-container {
         position: relative;
@@ -2499,12 +2565,12 @@ header {
 }
 
 .tech-stack {
-    padding-bottom: 80px;
+    padding-bottom: clamp(3.75rem, 1.736vw + 2.917rem, 5rem);
     .subheading {
         margin-bottom: 24px;
     }
     h2 {
-        margin-bottom: 90px;
+        margin-bottom: clamp(2.5rem, 4.34vw + 0.417rem, 5.625rem);
     }
 
     .animated-tabs {
@@ -2716,7 +2782,7 @@ header {
 
 .client-say {
     overflow: hidden;
-    padding: 52px 0 94px;
+    padding: 52px 0 clamp(3.75rem, 2.951vw + 2.333rem, 5.875rem);
     &.mt-custom {
         padding-top: 89px;
     }
@@ -2736,7 +2802,7 @@ header {
         margin-bottom: 8px;
     }
     h2 {
-        margin-bottom: 80px;
+        margin-bottom: clamp(1.875rem, 4.34vw - 0.208rem, 5rem);
         position: relative;
         z-index: 1;
     }
@@ -2983,7 +3049,7 @@ header {
         margin-bottom: 16px;
     }
     h2 {
-        margin-bottom: 60px;
+        margin-bottom: clamp(1.875rem, 2.604vw + 0.625rem, 3.75rem);
         max-width: 950px;
     }
     .blog-sec {
@@ -3071,7 +3137,7 @@ header {
     }
     h2 {
         max-width: 505px;
-        margin: 0 auto 90px;
+        margin: 0 auto clamp(1.875rem, 5.208vw - 0.625rem, 5.625rem);
     }
     .excellence-bx {
         text-align: center;
@@ -3124,7 +3190,7 @@ header {
 }
 
 .lets-connect {
-    padding: 160px 0 110px;
+    padding: clamp(4.375rem, 7.813vw + 0.625rem, 10rem) 0 clamp(3.125rem, 5.208vw + 0.625rem, 6.875rem);
     background: $base-black;
     .connect-row {
         display: flex;
@@ -3134,7 +3200,7 @@ header {
             max-width: 50%;
             width: 100%;
             .cn-top {
-                padding: 64px;
+                padding: clamp(1.25rem, 3.819vw - 0.583rem, 4rem);
                 border-radius: 32px;
                 background: #1e1e1e;
                 margin-bottom: 26px;
@@ -3170,10 +3236,11 @@ header {
                             border-radius: 6px;
                             border: 1px solid rgba(0, 0, 0, 0);
                             background-color: #333;
-                            padding: 10px 12px;
+                            padding: 11px 12px;
                             transition: all 0.4s ease-in-out;
                             width: 100%;
                             color: $white;
+                            margin-bottom: 0;
 
                             &:focus {
                                 outline: none;
@@ -3209,9 +3276,20 @@ header {
                         &.submit {
                             justify-content: flex-start;
                             .btn {
+                                padding: 15px 32px;
                                 box-shadow: 0 4px 12px 0 rgba(252, 150, 17, 0.4);
                                 font-weight: 600;
-                                color: $white;
+                                color: #fff;
+                                background-color: #fc9611;
+                                width: auto;
+                                border-radius: 100px;
+                                border: none;
+                                margin: 0;
+                                font-family: "DM Sans", sans-serif;
+                                font-size: 16px;
+                                font-style: normal;
+                                font-weight: 600;
+                                line-height: 20px;
                             }
                         }
                         .fileupload {
@@ -3336,7 +3414,7 @@ header {
         .connect-text {
             max-width: 50%;
             width: 100%;
-            padding: 23px 0 36px 64px;
+            padding: 23px 0 36px clamp(1.5rem, 3.472vw - 0.167rem, 4rem);
             .subheading {
                 margin-bottom: 8px;
             }
@@ -3359,8 +3437,8 @@ header {
                 align-items: center;
                 justify-content: space-between;
                 flex-wrap: wrap;
-                gap: 40px 50px;
-                margin-bottom: 70px;
+                gap: clamp(0.625rem, 2.604vw - 0.625rem, 2.5rem) 50px;
+                margin-bottom: clamp(1.875rem, 3.472vw + 0.208rem, 4.375rem);
                 li {
                     position: relative;
                     color: $neutral-200;
@@ -3436,7 +3514,7 @@ header {
 }
 
 .faq {
-    padding: 93px 0 120px;
+    padding: clamp(3.125rem, 3.733vw + 1.333rem, 5.813rem) 0 clamp(3.125rem, 6.076vw + 0.208rem, 7.5rem);
     text-align: center;
 
     .subheading {
@@ -3519,7 +3597,7 @@ header {
                 h6 {
                     color: $secondary-black;
                     font-family: $poppins;
-                    font-size: 20px;
+                    font-size: clamp(1rem, 0.347vw + 0.833rem, 1.25rem);
                     font-style: normal;
                     font-weight: 500;
                     line-height: 28px; /* 140% */
@@ -3552,7 +3630,7 @@ header {
 }
 
 .mainft {
-    padding: 160px 0 120px;
+    padding: clamp(4.375rem, 7.813vw + 0.625rem, 10rem) 0 clamp(3.125rem, 6.076vw + 0.208rem, 7.5rem);
     background-color: $base-black;
     .ft-top {
         .ft-row {
@@ -3757,7 +3835,7 @@ header {
         }
     }
     .ft-animation {
-        margin-top: 120px;
+        margin-top: clamp(2.5rem, 6.944vw - 0.833rem, 7.5rem);
         height: 406px;
         display: flex;
         align-items: center;
@@ -3898,10 +3976,10 @@ header {
             li {
                 color: $white;
                 font-family: $dmsans;
-                font-size: 16px;
+                font-size: clamp(0.75rem, 0.347vw + 0.583rem, 1rem);
                 font-style: normal;
                 font-weight: 400;
-                line-height: 30px; /* 187.5% */
+                line-height: clamp(1.25rem, 0.868vw + 0.833rem, 1.875rem); /* 187.5% */
                 a {
                     color: $white;
                 }
@@ -4212,7 +4290,7 @@ header {
         margin-bottom: 8px;
     }
     .mxw-779 {
-        max-width: 779px;
+        max-width: 755px;
         margin: 0 auto;
         text-align: center;
         p {
@@ -4224,5 +4302,338 @@ header {
 .menutext {
     & > span {
         display: none;
+    }
+}
+
+.blog-cubes {
+    padding-top: 8px;
+    // padding-bottom: 120px;
+    // padding-top: clamp(3.75rem, -4.514vw + 5.917rem, 0.5rem);
+    padding-bottom: clamp(3.75rem, 5.208vw + 1.25rem, 7.5rem);
+    .search-filter-block {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        align-self: stretch;
+        margin-bottom: 40px;
+        .searchblock {
+            max-width: 400px;
+            width: 100%;
+            border-radius: 100px;
+            overflow: hidden;
+            border: 1px solid var(--neutral-200, #e9ebee);
+            .searchblock-container {
+                position: relative;
+
+                input[type="text"] {
+                    width: 100%;
+                    border: none;
+                    margin-bottom: 0;
+                    background: var(--neutral-100, #f7f8fa);
+                    padding: 15px 116px 15px 32px;
+                    color: #696969;
+                    font-family: Poppins;
+                    font-size: 14px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 18px; /* 128.571% */
+                }
+                input[type="submit"] {
+                    // background: var(--brand-primary-light, #ffdca8);
+                    // padding: 16px 32px 16px 24px;\
+                    border: none;
+                    border-radius: 0;
+                    margin-bottom: 0;
+                    position: absolute;
+                    bottom: 0;
+                    top: 0;
+                    right: 0;
+                    max-width: 76px;
+                    background: $brand-primary-light url(../images/search-blog-black.png) no-repeat center center;
+                    background-size: 20px;
+                }
+            }
+        }
+        .filter-block {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            span {
+                color: var(--base-black, #0a0b0d);
+                font-family: "DM Sans";
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: normal;
+                display: block;
+                margin-bottom: 8px;
+            }
+            select {
+                border-radius: 8px;
+                border: 1px solid var(--neutral-200, #e9ebee);
+                padding: 16px 24px;
+                padding-right: 67px;
+                color: var(--base-black, #0a0b0d);
+                // text-align: center;
+                font-family: "DM Sans";
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 16px; /* 100% */
+                margin-bottom: 0;
+                &:focus,
+                &:focus-visible,
+                &:focus-within {
+                    outline: none;
+                    box-shadow: none;
+                }
+                background: var(--neutral-100, #f7f8fa)
+                    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 6"><path d="M0 0l5 6 5-6z" fill="%23000"/></svg>')
+                    no-repeat center right 26px;
+                background-size: 12px;
+            }
+        }
+    }
+    .row {
+        gap: 48px 0;
+    }
+    // .blog-cube {
+    //     position: relative;
+    //     .abs {
+    //         position: absolute;
+    //         inset: 0;
+    //     }
+    //     .img {
+    //         margin-bottom: 16px;
+    //         border-radius: 16px;
+    //         overflow: hidden;
+    //         img {
+    //             width: 100%;
+    //         }
+    //     }
+    //     .text {
+    //         h5 {
+    //             font-weight: 500;
+    //             margin-bottom: 8px;
+    //         }
+    //         p {
+    //             color: #000;
+    //             margin-bottom: 0;
+    //             line-height: 24px; /* 150% */
+    //         }
+    //     }
+    // }
+    .blog-cube {
+        position: relative;
+        cursor: pointer;
+
+        .abs {
+            position: absolute;
+            inset: 0;
+        }
+        .img {
+            position: relative; /* Needed for ::before and ::after positioning */
+            margin-bottom: 16px;
+            border-radius: 16px;
+            overflow: hidden;
+
+            // --- Shiny Diagonal Line 1 (::before) ---
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: -150%; /* Start position: Off-screen left/top */
+                width: 50%; /* Width of the shine itself */
+                height: 100%;
+
+                // Diagonal gradient for the shine
+                background: linear-gradient(
+                    to right,
+                    rgba(255, 255, 255, 0) 0%,
+                    rgba(255, 255, 255, 0.3) 50%,
+                    rgba(255, 255, 255, 0) 100%
+                );
+
+                transform: skewX(-20deg); /* Rotate the shine diagonally */
+                transition: left 1s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Transition for the sliding movement */
+                z-index: 10;
+            }
+
+            // --- Shiny Diagonal Line 2 (::after) ---
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: -180%; /* Start position 2 (slightly further back) */
+                width: 30%; /* Thinner shine */
+                height: 100%;
+
+                // Diagonal gradient for the second shine (slightly less intense)
+                background: linear-gradient(
+                    to right,
+                    rgba(255, 255, 255, 0) 0%,
+                    rgba(255, 255, 255, 0.15) 50%,
+                    /* Lower opacity */ rgba(255, 255, 255, 0) 100%
+                );
+
+                transform: skewX(-20deg); /* Same skew */
+                transition: left 1s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Slightly different speed */
+                z-index: 10;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                /* Transition for the diagonal zoom effect */
+                transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+                transform: scale(1); /* Initial state */
+                transition-delay: 0.25s;
+            }
+        }
+
+        // --- Hover Effects ---
+        &:hover {
+            .img {
+                &::before {
+                    left: 150%; /* Slide shine 1 across */
+                }
+                &::after {
+                    left: 180%; /* Slide shine 2 across (slightly further to ensure it clears) */
+                }
+                img {
+                    /* Diagonal Zoom and slight shift (scale and translate) */
+                    transform: scale(1.1) translate(2%, 2%);
+                }
+            }
+            .text {
+                h5 {
+                    color: $brand-primary;
+                    transition-delay: 0.25s;
+                }
+            }
+        }
+
+        .text {
+            h5 {
+                font-weight: 500;
+                margin-bottom: 8px;
+                transition: all 0.3s ease-in-out;
+                font-size: clamp(1.125rem, 0.521vw + 0.875rem, 1.5rem);
+                line-height: clamp(1.563rem, 0.608vw + 1.271rem, 2rem);
+            }
+            p {
+                color: #000;
+                margin-bottom: 0;
+                line-height: 24px; /* 150% */
+            }
+        }
+    }
+
+    /* ----------------------------------------------------------------------
+ * CAROUSEL PAGINATION STYLING (Based on image_628236.png)
+ * ----------------------------------------------------------------------
+ */
+
+    .carousel-pagination {
+    }
+
+    .carousel-pagination .page-indicators {
+        display: flex;
+        align-items: center;
+        gap: 32px;
+        border-top: 1px solid var(--neutral-200, #e9ebee);
+        margin-top: 40px;
+        padding-top: 40px;
+        justify-content: center;
+    }
+
+    .carousel-pagination li {
+        /* Ensures list items don't interfere with flex alignment */
+        padding: 0;
+    }
+
+    /* --------------------
+ * BASE STYLE FOR ALL CIRCLES (Numbers and Arrows)
+ * --------------------
+ */
+    .carousel-pagination .page-number,
+    .carousel-pagination .page-arrow {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        cursor: pointer;
+
+        /* Dimensions for the large circles */
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+
+        /* Standard font style for the numbers */
+        font-size: 18px;
+        font-weight: 700;
+        border: none;
+        transition: all 0.2s ease-in-out;
+    }
+
+    /* --------------------
+ * DEFAULT NUMBER STYLE (Pages 2, 3, 4, 5)
+ * --------------------
+ */
+    .carousel-pagination .page-number {
+        display: flex;
+        width: 32px;
+        height: 32px;
+        padding: 12px 16px;
+        justify-content: center;
+        align-items: center;
+        gap: 80px;
+        aspect-ratio: 1/1;
+
+        border-radius: 100px;
+        text-align: center;
+        font-family: Inter;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 14px; /* 100% */
+    }
+
+    /* --------------------
+ * ACTIVE/CURRENT PAGE STYLE (Page 1)
+ * --------------------
+ */
+    .carousel-pagination .page-number.current,
+    .carousel-pagination .page-number:hover {
+        background-color: $brand-primary; /* Bright Orange solid fill */
+        color: var(--Neutral---color-neutral-500, #111);
+    }
+
+    /* --------------------
+ * ARROW BUTTONS (Prev/Next)
+ * --------------------
+ */
+    .carousel-pagination .page-arrow {
+        display: flex;
+        width: 48px;
+        height: 48px;
+        padding: 12px;
+        justify-content: center;
+        align-items: center;
+        aspect-ratio: 1/1;
+
+        border-radius: 100px;
+        background: $brand-primary-light;
+    }
+
+    /* --------------------
+ * HOVER/FOCUS STATES
+ * --------------------
+ */
+    .carousel-pagination .page-number:hover,
+    .carousel-pagination .page-arrow:hover {
+        /* Slightly darken the background or change color for interaction feedback */
+        opacity: 0.8;
     }
 }

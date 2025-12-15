@@ -124,7 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
       const clickHandler = () => {
-        const isMobile = window.innerWidth <= 767;
+        const isMobile = window.innerWidth <= 991;
         if (!isMobile) return;
 
         if (mobileTl.reversed()) {
@@ -197,7 +197,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 ease: "power2.inOut",
                 onComplete: () => openItem.classList.remove("open"),
               });
-              openItem.querySelector(".mobile-arrow").textContent = "+";
+              // openItem.querySelector(".mobile-arrow").textContent = "+";
             }
           });
 
@@ -209,7 +209,7 @@ document.addEventListener("DOMContentLoaded", () => {
             ease: "power2.inOut",
             onComplete: () => item.classList.remove("open"),
           });
-          arrow.textContent = "+";
+          // arrow.textContent = "+";
         } else {
           gsap.set(submenu, { maxHeight: "auto", opacity: 1 });
           const height = submenu.offsetHeight;
@@ -221,7 +221,7 @@ document.addEventListener("DOMContentLoaded", () => {
             ease: "power2.inOut",
             onComplete: () => item.classList.add("open"),
           });
-          arrow.textContent = "-";
+          // arrow.textContent = "-";
         }
       });
     });
@@ -235,7 +235,7 @@ document.addEventListener("DOMContentLoaded", () => {
           const icon = head.querySelector(".icon");
 
           parent.classList.toggle("active");
-          icon.textContent = parent.classList.contains("active") ? "-" : "+";
+          // icon.textContent = parent.classList.contains("active") ? "-" : "+";
 
           if (parent.classList.contains("active")) {
             gsap.fromTo(
@@ -259,7 +259,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // --- Initialize Based on Screen Size ---
   const initMenu = () => {
-    if (window.innerWidth <= 767) {
+    if (window.innerWidth <= 991) {
       setupMobileMenu();
     } else {
       setupDesktopMenu();
@@ -395,15 +395,30 @@ document.addEventListener("DOMContentLoaded", () => {
         },
 
         breakpoints: {
-          // Tablet (>=768)
-          768: {
+          // Mobile (>=639)
+          639: {
             slidesPerView: 1.4,
             spaceBetween: 16,
             freeMode: false,
             speed: 1400,
             autoplay: false,
           },
-
+          // Tablet (>=768)
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 24,
+            loop: true,
+            freeMode: true,
+            // continuous autoplay: use delay 0 if your Swiper version supports it reliably.
+            // If you see issues, change delay to 1 (fallback).
+            autoplay: {
+              delay: 0,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: false,
+            },
+            speed: 6000,
+            loopedSlides: 8,
+          },
           // Desktop (>=992) — marquee-like behavior
           992: {
             slidesPerView: 3,
