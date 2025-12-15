@@ -1,1 +1,0 @@
-# fortmindz_v3
