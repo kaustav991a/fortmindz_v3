@@ -1477,4 +1477,28 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   })();
+
+  // ! -- 16. Copy blog URL button
+  document.addEventListener("click", function (e) {
+    const link = e.target.closest(".copy-link");
+    if (!link) return; // button না থাকলে exit
+
+    e.preventDefault();
+
+    const linkToCopy = window.location.href;
+
+    // Copy to clipboard
+    navigator.clipboard.writeText(linkToCopy);
+
+    // Create span
+    const span = document.createElement("span");
+    span.className = link.className;
+    span.innerHTML = 'Copied <i class="fa-solid fa-check"></i>';
+
+    // Replace a → span
+    link.replaceWith(span);
+  });
+
+  // ! -- 17. Equal height of "Trust us" box
+  $(".trustbx-inner").matchHeight();
 });
