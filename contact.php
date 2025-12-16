@@ -382,6 +382,91 @@
     </div>
 </section>
 
+<section class="we-help">
+    <div class="container">
+        <div class="subheading">
+            <h6>How Can We Help You?</h6>
+            <div class="sq sq1"></div>
+            <div class="sq sq2"></div>
+            <div class="sq sq3"></div>
+            <div class="sq sq4"></div>
+        </div>
+        <h2>How Can We Help You?</h2>
+        <p>Choose the category that best matches your requirement and our specialist team will get in touch.</p>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="help-bx">
+                    <div class="icon">
+                        <img src="images/help-bx-img-1.png" alt="">
+                    </div>
+                    <div class="text">
+                        <h5>Start a New Project</h5>
+                        <p>Have an idea or product in mind? Let’s convert it into a high-performing digital solution.</p>
+                    </div>
+                    <img src="images/help-box-arrow.png" alt="" class="help-arrow">
+                    <a href="#!" class="abs"></a>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="help-bx">
+                    <div class="icon">
+                        <img src="images/help-bx-img-2.png" alt="">
+                    </div>
+                    <div class="text">
+                        <h5>Hire Dedicated Developers</h5>
+                        <p>Scale your team with top-tier engineers, designers, and QA experts.</p>
+                    </div>
+                    <img src="images/help-box-arrow.png" alt="" class="help-arrow">
+                    <a href="#!" class="abs"></a>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="help-bx">
+                    <div class="icon">
+                        <img src="images/help-bx-img-3.png" alt="">
+                    </div>
+                    <div class="text">
+                        <h5>Discuss a Partnership</h5>
+                        <p>Looking to collaborate or explore long-term engagement? We’re open to meaningful partnerships.</p>
+                    </div>
+                    <img src="images/help-box-arrow.png" alt="" class="help-arrow">
+                    <a href="#!" class="abs"></a>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="help-bx">
+                    <div class="icon">
+                        <img src="images/help-bx-img-4.png" alt="">
+                    </div>
+                    <div class="text">
+                        <h5>General Inquiry</h5>
+                        <p>Have a question about our services, process, or company? We’d love to hear from you.</p>
+                    </div>
+                    <img src="images/help-box-arrow.png" alt="" class="help-arrow">
+                    <a href="#!" class="abs"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="locationbx-outer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="locationbx">
+                    <h5>INDIA / Kolkata</h5>
+                    <p>INDIA: CN-8/2, Room No- 604 6th Floor, Sector V, Salt Lake, Kolkata West Bengal, 700091</p>
+                    <a href="#!">See on map <img src="images/map-arrow.png" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section class="faq">
     <div class="container">
         <div class="subheading">
