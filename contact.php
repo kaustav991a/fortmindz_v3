@@ -456,9 +456,42 @@
 <section class="locationbx-outer">
     <div class="container">
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-lg-3 col-md-6">
                 <div class="locationbx">
+                    <div class="orange-circle-icon">
+                        <img src="images/kolkata-icon.png" alt="icon-place">
+                    </div>
                     <h5>INDIA / Kolkata</h5>
+                    <p>INDIA: CN-8/2, Room No- 604 6th Floor, Sector V, Salt Lake, Kolkata West Bengal, 700091</p>
+                    <a href="#!">See on map <img src="images/map-arrow.png" alt=""></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="locationbx">
+                    <div class="orange-circle-icon">
+                        <img src="images/usa-icon.png" alt="icon-place">
+                    </div>
+                    <h5>USA</h5>
+                    <p>INDIA: CN-8/2, Room No- 604 6th Floor, Sector V, Salt Lake, Kolkata West Bengal, 700091</p>
+                    <a href="#!">See on map <img src="images/map-arrow.png" alt=""></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="locationbx">
+                    <div class="orange-circle-icon">
+                        <img src="images/canada-icon.png" alt="icon-place">
+                    </div>
+                    <h5>Canada</h5>
+                    <p>INDIA: CN-8/2, Room No- 604 6th Floor, Sector V, Salt Lake, Kolkata West Bengal, 700091</p>
+                    <a href="#!">See on map <img src="images/map-arrow.png" alt=""></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="locationbx">
+                    <div class="orange-circle-icon">
+                        <img src="images/australia-icon.png" alt="icon-place">
+                    </div>
+                    <h5>Australia</h5>
                     <p>INDIA: CN-8/2, Room No- 604 6th Floor, Sector V, Salt Lake, Kolkata West Bengal, 700091</p>
                     <a href="#!">See on map <img src="images/map-arrow.png" alt=""></a>
                 </div>
