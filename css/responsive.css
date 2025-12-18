@@ -1,3 +1,39 @@
+@media screen and (max-width: 1399px) {
+
+    section.solutionBx .accordion-solution .each-solution .solution-body-dts .gp_cont .solution-fm {
+        width: 20rem;
+    }
+
+    section.solutionBx .accordion-solution .each-solution .solution-body-dts .gp_cont .solution-details {
+        width: calc(100% - 20rem);
+    }
+}
+
+@media screen and (max-width: 1199px) {
+
+    section.solutionBx .accordion-solution .each-solution .solution-body-dts .gp_cont .solution-fm {
+        width: 15rem;
+    }
+
+    section.solutionBx .accordion-solution .each-solution .solution-body-dts .gp_cont .solution-details {
+        width: calc(100% - 15rem);
+        padding: 1.25rem;
+        overflow: auto;
+    }
+
+    section.solutionBx .accordion-solution .each-solution .solution-body-dts .gp_cont .solution-details h3 {
+        font-size: 1.45rem;
+        line-height: 1.7rem;
+        margin: 0 0 1rem;
+    }
+
+    section.solutionBx .accordion-solution .each-solution .solution-body-dts .gp_cont .solution-details p {
+        font-size: 0.875rem;
+        line-height: 1.375rem;
+        margin-bottom: 1.25rem;
+    }
+}
+
 @media screen and (max-width: 1199px) {
 
     .banner .banner-row .banner-left .selection-area-2,
@@ -587,6 +623,57 @@
 
     .blog-details-sec {
         padding: 30px 0;
+    }
+
+    /* add css on 18.12.2025 */
+    section.solutionBx .accordion-solution {
+        overflow: hidden;
+        max-height: max-content;
+        flex-direction: column;
+    }
+
+    section.solutionBx .accordion-solution .each-solution {
+        position: relative;
+        flex: unset;
+        flex-direction: column;
+    }
+
+    section.solutionBx .accordion-solution .each-solution .solution-header {
+        width: 100%;
+        height: auto;
+        writing-mode: unset;
+        position: relative;
+        padding: 20px;
+    }
+
+    section.solutionBx .accordion-solution .each-solution .solution-body-dts {
+        display: flex;
+        flex: 1 0 0;
+        opacity: 0;
+        transition: all 0.3s ease;
+        height: 0;
+    }
+
+    section.solutionBx .accordion-solution .each-solution.activeOpen .solution-body-dts {
+        opacity: 1;
+        height: auto;
+    }
+
+    section.solutionBx .accordion-solution .each-solution .solution-body-dts .gp_cont {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    section.solutionBx .accordion-solution .each-solution .solution-body-dts .gp_cont .solution-fm {
+        width: 100%;
+        height: auto;
+    }
+
+    section.solutionBx .accordion-solution .each-solution .solution-body-dts .gp_cont .solution-details {
+        width: 100%;
+        padding: 1.25rem;
+        overflow: auto;
     }
 }
 

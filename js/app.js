@@ -345,7 +345,7 @@ document.addEventListener("DOMContentLoaded", () => {
     );
   }
 
-  //! --- 3. Splide Sliders ---
+  //! --- 3. Splide and Swiper Sliders ---
 
   /* testimonial-swiper: responsive + continuous autoplay on desktop
    Behavior:
@@ -528,8 +528,50 @@ document.addEventListener("DOMContentLoaded", () => {
         gap: "0",
       }).mount(window.splide ? window.splide.Extensions : {});
     }
+
+    // Blog Slider
+    // const blogSliderEl = document.querySelector(".blog-slider");
+
+    // if (blogSliderEl) {
+    //   new Splide(blogSliderEl, {
+    //     type: "loop", // or "slide" if you don’t want infinite loop
+    //     perPage: 3,
+    //     arrows: false,
+    //     pagination: false,
+    //     gap: "0",
+    //     autoplay: false, // ensure no auto movement
+    //     drag: true,
+    //   }).mount(); // ✅ IMPORTANT
+    // }
+
+    new Swiper(".blog-slider", {
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+      spaceBetween: 24,
+      loop: true,
+      speed: 600,
+      grabCursor: true,
+
+      pagination: {
+        el: ".swiper_custom_pagination",
+        clickable: true,
+      },
+
+      breakpoints: {
+        1024: {
+          slidesPerView: 3,
+          slidesPerGroup: 1,
+        },
+        768: {
+          slidesPerView: 2,
+          slidesPerGroup: 1,
+        },
+      },
+    });
   } else {
-    console.warn("Splide library not found. Sliders script skipped.");
+    console.warn(
+      "Splide and Swiper library not found. Sliders script skipped."
+    );
   }
 
   //! --- 4. Lenis Scroll (Smooth Scrolling) ---
@@ -1497,6 +1539,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Replace a → span
     link.replaceWith(span);
+  });
+
+  // !-- 18. Tab accordion
+  const solutions = document.querySelectorAll(".each-solution");
+
+  solutions.forEach((solution) => {
+    solution.querySelector(".solution-header").addEventListener("click", () => {
+      // Remove active from all
+      solutions.forEach((item) => item.classList.remove("activeOpen"));
+
+      // Add active to clicked one
+      solution.classList.add("activeOpen");
+    });
   });
 
   // ! -- 17. Equal height of "Trust us" box
