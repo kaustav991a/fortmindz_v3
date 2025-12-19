@@ -442,7 +442,7 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-md-6 ms-md-auto">
+            <div class="col-lg-6 col-md-7 ms-md-auto">
                 <div class="headingTxt">
                     <div class="subheading" data-aos="fade-down" data-aos-delay="100">
                         <h6>Security Assurance</h6>
@@ -693,7 +693,7 @@
     </div>
 </div>
 
-<section class="splide logo-slider haspadding" aria-label="Trusted Companies">
+<section class="splide logo-slider haspadding mt-0" aria-label="Trusted Companies">
     <div class="container">
         <div class="mxw810">
             <h2>Trusted By Leading Web Development Companies</h2>

@@ -12,9 +12,10 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentMenuMode = null;
   let menuLenis = null; // Separate Lenis for mobile menu ul
 
-  // --- Desktop Submenu Animation (≥768px) ---
+  // --- Desktop Submenu Animation (≥992px) ---
   const setupDesktopMenu = () => {
-    // --- Mega Menu Animation (Desktop) ---
+    if (currentMenuMode === "desktop") return;
+
     document.querySelectorAll(".has-megamenu").forEach((menu) => {
       const mega = menu.querySelector(".megamenu");
       if (!mega) return;
@@ -22,9 +23,8 @@ document.addEventListener("DOMContentLoaded", () => {
       gsap.set(mega, { display: "none", opacity: 0, y: -15 });
 
       const tl = gsap.timeline({ paused: true });
-
       tl.to(mega, {
-        display: "flex",
+        display: "block",
         opacity: 1,
         y: 0,
         duration: 0.25,
@@ -51,50 +51,26 @@ document.addEventListener("DOMContentLoaded", () => {
             ease: "power2.out",
           },
           "-=0.15"
-        )
-        .from(
-          mega.querySelector(".mega-footer"),
-          {
-            opacity: 0,
-            y: 10,
-            duration: 0.25,
-            ease: "power2.out",
-          },
-          "-=0.15"
         );
 
       menu.addEventListener("mouseenter", () => tl.play());
       menu.addEventListener("mouseleave", () => tl.reverse());
     });
 
-    document.querySelectorAll(".has-submenu .menu-head").forEach((head) => {
-      head.addEventListener("click", () => {
-        const parent = head.parentElement;
-        const icon = head.querySelector(".icon");
-
-        parent.classList.toggle("active");
-        icon.textContent = parent.classList.contains("active") ? "-" : "+";
-      });
-    });
+    currentMenuMode = "desktop";
   };
 
-  // --- Mobile Menu Animation (≤767px) ---
+  // --- Mobile Menu Animation (≤991px) ---
   const setupMobileMenu = () => {
     if (currentMenuMode === "mobile") return;
 
-    if (currentMenuMode === "desktop") {
-      // Cleanup: Remove desktop event listeners if needed
-    }
-
     const toggleBtn = document.querySelector(".menu-toggle");
     const nav = document.querySelector(".nav");
-    const menuUl = document.querySelector(".menu"); // The ul with overflow for Lenis
+    const menuUl = document.querySelector(".menu");
 
-    if (!toggleBtn || !nav || !menuUl) {
-      console.warn("Mobile menu elements not found. Skipping setup.");
-      return;
-    }
+    if (!toggleBtn || !nav || !menuUl) return;
 
+    // 1. Hamburger Toggle Logic
     if (!toggleBtn.dataset.listenerAttached) {
       const mobileTl = gsap.timeline({ paused: true, reversed: true });
 
@@ -123,69 +99,61 @@ document.addEventListener("DOMContentLoaded", () => {
           "-=0.2"
         );
 
-      const clickHandler = () => {
-        const isMobile = window.innerWidth <= 991;
-        if (!isMobile) return;
+      toggleBtn.addEventListener("click", () => {
+        if (window.innerWidth > 991) return;
 
         if (mobileTl.reversed()) {
-          // Menu opening: Stop body scroll and init menu Lenis
-          document.body.style.overflow = "hidden"; // Lock body scroll
-          if (typeof lenis !== "undefined") lenis.stop(); // Stop main Lenis
+          document.body.style.overflow = "hidden";
+          if (typeof lenis !== "undefined") lenis.stop();
 
-          // Create separate Lenis for the menu ul (matching your main Lenis options)
           menuLenis = new Lenis({
-            wrapper: menuUl, // Target the ul for scrolling
-            duration: 1.0, // Mobile-adjusted from your code
+            wrapper: menuUl,
+            duration: 1.0,
             smoothWheel: true,
             smoothTouch: true,
-            touchMultiplier: 2.0, // Mobile-adjusted
-            easing: (t) => 1 - Math.pow(1 - t, 3.2),
-            direction: "vertical",
-            gestureDirection: "vertical",
-            infinite: false,
+            touchMultiplier: 2.0,
           });
 
-          // Integrate menuLenis with GSAP ticker (like your main Lenis)
-          gsap.ticker.add((time) => {
-            if (menuLenis) menuLenis.raf(time * 1000);
-          });
-
-          mobileTl.timeScale(1).play();
+          gsap.ticker.add(updateMenuLenis);
+          mobileTl.play();
           nav.classList.add("active");
-          mobileTl.eventCallback("onReverseComplete", null);
         } else {
-          // Menu closing: Restart body scroll and destroy menu Lenis
-          mobileTl.timeScale(1).reverse();
+          mobileTl.reverse();
           mobileTl.eventCallback("onReverseComplete", () => {
             nav.classList.remove("active");
-            document.body.style.overflow = ""; // Unlock body scroll
-            if (typeof lenis !== "undefined") lenis.start(); // Restart main Lenis
-
-            // Destroy menu Lenis and remove ticker
+            document.body.style.overflow = "";
+            if (typeof lenis !== "undefined") lenis.start();
             if (menuLenis) {
-              gsap.ticker.remove(menuLenis.raf); // Remove from GSAP ticker
+              gsap.ticker.remove(updateMenuLenis);
               menuLenis.destroy();
               menuLenis = null;
             }
           });
         }
-      };
-
-      toggleBtn.addEventListener("click", clickHandler);
+      });
       toggleBtn.dataset.listenerAttached = "true";
     }
 
-    // Mobile submenu handling
+    function updateMenuLenis(time) {
+      if (menuLenis) menuLenis.raf(time * 1000);
+    }
+
+    // 2. Mobile Megamenu Click Logic (The Fix)
     document.querySelectorAll(".mobile-submenu").forEach((item) => {
-      const arrow = item.querySelector(".mobile-arrow");
+      const link = item.querySelector("a");
       const submenu = item.querySelector(".megamenu");
 
-      if (!arrow || !submenu) return;
+      if (!link || !submenu) return;
 
-      arrow.addEventListener("click", (e) => {
+      link.addEventListener("click", (e) => {
+        if (window.innerWidth > 991) return;
+
+        e.preventDefault(); // Stop page jump
         e.stopPropagation();
+
         const isOpen = item.classList.contains("open");
 
+        // Close other open ones (Accordion)
         document
           .querySelectorAll(".mobile-submenu.open")
           .forEach((openItem) => {
@@ -197,7 +165,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 ease: "power2.inOut",
                 onComplete: () => openItem.classList.remove("open"),
               });
-              // openItem.querySelector(".mobile-arrow").textContent = "+";
             }
           });
 
@@ -207,57 +174,38 @@ document.addEventListener("DOMContentLoaded", () => {
             opacity: 0,
             duration: 0.3,
             ease: "power2.inOut",
-            onComplete: () => item.classList.remove("open"),
+            onComplete: () => {
+              item.classList.remove("open");
+              if (menuLenis) menuLenis.resize(); // Fix scroll height
+            },
           });
-          // arrow.textContent = "+";
         } else {
-          gsap.set(submenu, { maxHeight: "auto", opacity: 1 });
-          const height = submenu.offsetHeight;
+          item.classList.add("open");
+          gsap.set(submenu, {
+            maxHeight: "none",
+            opacity: 1,
+            display: "block",
+          });
+          const height = submenu.scrollHeight;
           gsap.set(submenu, { maxHeight: 0, opacity: 0 });
+
           gsap.to(submenu, {
             maxHeight: height,
             opacity: 1,
-            duration: 0.3,
-            ease: "power2.inOut",
-            onComplete: () => item.classList.add("open"),
+            duration: 0.4,
+            ease: "power2.out",
+            onComplete: () => {
+              if (menuLenis) menuLenis.resize(); // Fix scroll height
+            },
           });
-          // arrow.textContent = "-";
         }
       });
     });
 
-    document
-      .querySelectorAll(".service-submenu .has-submenu .menu-head")
-      .forEach((head) => {
-        head.addEventListener("click", () => {
-          const parent = head.closest(".has-submenu");
-          const submenu = parent.querySelector(".submenu");
-          const icon = head.querySelector(".icon");
-
-          parent.classList.toggle("active");
-          // icon.textContent = parent.classList.contains("active") ? "-" : "+";
-
-          if (parent.classList.contains("active")) {
-            gsap.fromTo(
-              submenu,
-              { maxHeight: 0, opacity: 0 },
-              { maxHeight: 500, opacity: 1, duration: 0.3, ease: "power2.out" }
-            );
-          } else {
-            gsap.to(submenu, {
-              maxHeight: 0,
-              opacity: 0,
-              duration: 0.3,
-              ease: "power2.inOut",
-            });
-          }
-        });
-      });
-
     currentMenuMode = "mobile";
   };
 
-  // --- Initialize Based on Screen Size ---
+  // --- Initialization & Resize ---
   const initMenu = () => {
     if (window.innerWidth <= 991) {
       setupMobileMenu();
@@ -266,7 +214,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  // Initialize immediately on load
+  window.addEventListener("resize", () => {
+    // Only re-init if switching between mobile/desktop breakpoints
+    if (window.innerWidth <= 991 && currentMenuMode !== "mobile") initMenu();
+    if (window.innerWidth > 991 && currentMenuMode !== "desktop") initMenu();
+  });
+
   initMenu();
 
   window.addEventListener("resize", () => {
